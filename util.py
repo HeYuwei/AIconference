@@ -37,6 +37,10 @@ def get_titles(conf ,conf_info, time,with_a = False):
     if conf == 'arxiv':
         return get_arxiv_info(time = time,with_a = with_a)
 
+    if not os.path.exists('papers/' + conf):
+        os.mkdir('papers/' + conf)
+
+
     if (conf_info[conf]['hold_time'] == 'single' and int(time) % 2 == 0) or (conf_info[conf]['hold_time'] == 'double' and int(time) % 2 == 1):
         print(conf + ' is not hold in ' + time)
         return []
@@ -46,8 +50,6 @@ def get_titles(conf ,conf_info, time,with_a = False):
         suffix += '_a'
 
     fname = 'papers/' + conf + '/' + time + suffix + '.json'
-    if not os.path.exists('papers/' + conf):
-        os.mkdir('papers/' + conf)
 
     if os.path.exists(fname):
         with open(fname,'r',encoding='utf-8') as f:

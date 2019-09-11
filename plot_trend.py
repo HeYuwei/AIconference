@@ -6,7 +6,7 @@ conf_list = ['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr', 'mm']
 # conf_list = ['cvpr']
 # conf_list = ['arxiv']
 # 时间范围，以年为单位，arxiv以月为单位
-time_sec = ['2016','2019']
+time_sec = ['2018','2019']
 # time_sec = ['201701','201909']
 # 是否在摘要中检索关键字
 with_abstract = False
@@ -22,10 +22,10 @@ refresh_info = False
 
 # 所要检索的关键字
 keywords = {}
-keywords['m'] = ['attention','classi']
+keywords['m'] = []
 keywords['c'] = []
 keywords['r'] = []
-# keywords['c'] = ['anoma','unusua','abnor','viole']
+keywords['c'] = ['anoma','unusua','abnor','viole']
 # keywords['c'] = ['encoder']
 
 conf_info = init_conf_info()
