@@ -23,7 +23,6 @@ refresh_info = False
 # 所要检索的关键字
 keywords = {}
 keywords['m'] = []
-keywords['c'] = []
 keywords['r'] = []
 keywords['c'] = ['anoma','unusua','abnor','viole']
 # keywords['c'] = ['encoder']
