@@ -1,8 +1,7 @@
 #coding=utf-8
-import os
 import time
 import operator
-import stop_words
+from apps import stop_words
 from util import *
 phrase_num = 1
 conf = 'cvpr'

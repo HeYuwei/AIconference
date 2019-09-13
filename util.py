@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import importlib
 import json
 import os
 from bs4 import BeautifulSoup
@@ -6,7 +8,35 @@ import requests
 import re
 import csv
 
+def assert_info(opt):
+    if len(opt.conf_list) > 1 and 'arxiv' in opt.conf_list:
+        assert False, 'arxiv must be acount solely!'
+    recorded_confs =  list(opt.conf_info.keys())
+    # print(str(recorded_confs))
+    for conf in opt.conf_list:
+        if conf not in recorded_confs:
+            assert False, 'The info of ' + conf + ' must be recorded first!'
 
+    for t in opt.time_sec:
+        assert len(t) == 4 or len(t) == 6, 'The time unit should be year or mouth'
+
+def ex_funtion(opt):
+    keywords = {}
+    keywords['m'] = opt.key_words_m
+    keywords['c'] = opt.key_words_c
+    keywords['r'] = opt.key_words_r
+    opt.keywords = keywords
+
+    model_filename = "apps." + opt.function
+    modellib = importlib.import_module(model_filename)
+    func = getattr(modellib,opt.function)
+    func(opt)
+
+    # target_model_name = model_name.replace('_', '') + 'model'
+    # for name, cls in modellib.__dict__.items():
+    #     if name.lower() == target_model_name.lower() \
+    #        and issubclass(cls, BaseModel):
+    #         model = cls
 
 def init_conf_info():
     conf_info = {}
@@ -106,6 +136,8 @@ def get_titles(conf ,conf_info, time,with_a = False):
                 content[str(i)]['url'] = item[1]
                 content[str(i)]['abstract'] = ''
                 content[str(i)]['cite_num'] = -1
+                content[str(i)]['conf'] = conf
+                content[str(i)]['time'] = time
 
             with open(fname,'w',encoding='utf8') as f:
                 json.dump(content,f)
@@ -196,9 +228,10 @@ def get_arxiv_info(time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = F
                     paper_content[str(p_count)]['url'] = url
                     paper_content[str(p_count)]['abstract'] = abstract
                     paper_content[str(p_count)]['cite_num'] = -1
+                    paper_content[str(p_count)]['conf'] = 'arxiv'
+                    paper_content[str(p_count)]['time'] = time
 
                     p_count += 1
-
                     # print(title)
                     # print(abstract + '\n')
 
@@ -214,6 +247,8 @@ def get_arxiv_info(time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = F
                     paper_content[str(p_count)]['url'] = url
                     paper_content[str(p_count)]['abstract'] = ''
                     paper_content[str(p_count)]['cite_num'] = -1
+                    paper_content[str(p_count)]['conf'] = 'arxiv'
+                    paper_content[str(p_count)]['time'] = time
                     p_count += 1
 
                 # print(title + '\n')
@@ -381,17 +416,6 @@ def get_longest_text(t_list):
             m_text = text
     return m_text
 
-def refresh_sentence(sentence):
-    new_s = ''
-    words = sentence.split()
-    for w in words:
-        n_w = ''
-        for c in w:
-            if (ord(c) >=97 and ord(c) <= 122) or (ord(c) >=65 and ord(c) <= 90) or (ord(c) >=48 and ord(c) <= 57):
-                n_w += c
-        new_s += n_w + ' '
-    return new_s
-
 def supply_basic_info(item,conf,refresh_info):
     # abstract
 
@@ -420,6 +444,77 @@ def supply_basic_info(item,conf,refresh_info):
     if not with_cite:
         get_cite_num(item,soup)
     # print(item['abstract'])
+
+def search_with_keywords(opt):
+    keywords = opt.keywords
+    time_sec = opt.time_sec
+    conf_list = opt.conf_list
+    time_list = gen_times(time_sec = time_sec, conf_list = conf_list)
+    count_list = []
+    t_count_list = []
+
+    conf_info = opt.conf_info
+    selected_items = []
+
+    for time in time_list:
+        count = 0
+        t_count = 0
+        for conf in conf_list:
+            c_count = 0
+            print(conf + time)
+            items = get_titles(conf,conf_info,time)
+            for item in items:
+                t_count += 1
+                s_text = item['title']
+                if not with_keywords(s_text, keywords):
+                    continue
+
+                count += 1
+                c_count += 1
+
+                p_title = item['title']
+                if opt.with_tip:
+                    p_title = addTips(p_title,keywords)
+
+                print(str(c_count) + '. ' + p_title)
+                print(item['url'])
+                print('')
+
+                if opt.detail_info:
+                    supply_basic_info(item,conf,opt.refresh_info)
+
+                selected_items.append(item)
+
+            cache_info(items, conf, time)
+
+        count_list.append(count)
+        t_count_list.append(t_count)
+
+    paper_count = sum(count_list)
+    print('paper count ' + str(paper_count))
+    if paper_count == 0:
+        return []
+
+    x = list(range(len(time_list)))
+
+    plt.xticks(x, time_list)
+    x_label = ''
+    for word in keywords['m']:
+        x_label += word + ' '
+    for word in keywords['c']:
+        x_label += word + ' '
+
+    plt.xlabel(x_label)
+    plt.plot(x, count_list)
+
+    r_list = [count_list[i]/t_count_list[i] for i in range(len(t_count_list))]
+    mr = max(r_list)
+    r_list = [r_list[i]/mr * max(count_list)/2 for i in range(len(t_count_list))]
+    plt.plot(x,r_list)
+    plt.show()
+    plt.savefig('trend.png')
+
+    return selected_items
 
 def get_abstract(item,soup,conf):
     # url = 'http://proceedings.mlr.press/v48/guha16.html'
@@ -477,7 +572,7 @@ def get_abstract(item,soup,conf):
     try:
         ab = get_longest_text(text_list)
     except:
-        ab = 'Not Accesible'
+        ab = 'Not Accessible'
     ab = ab.lstrip()
     ab = break_line(ab)
     item['abstract'] = ab
@@ -504,10 +599,8 @@ def get_cite_num(p_item,soup):
     p_item['cite_num'] = cite_num
     return cite_num
 
-def cache_info(items,conf,time,with_ab = False):
+def cache_info(items,conf,time):
     suffix = ''
-    if with_ab:
-        suffix += '_a'
 
     fname = 'papers/' + conf + '/' + time + suffix + '.json'
     paper_content = {}
