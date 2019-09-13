@@ -3,7 +3,9 @@ from util import ex_funtion, assert_info, init_conf_info
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, conflict_handler="resolve")
-    parser.add_argument('--conf_list', type = object , default=['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr','mm'],
+    # parser.add_argument('--conf_list', type = object , default=['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr','mm'],
+    #                     help='The conferences or journal to reserach.')
+    parser.add_argument('--conf_list', type = object , default=['arxiv'],
                         help='The conferences or journal to reserach.')
 
     parser.add_argument('--time_sec', type = object, default=['2016','2019'],
@@ -20,12 +22,12 @@ if __name__ == '__main__':
                         help='The words can not be contained ')
 
     parser.add_argument('--detail_info', type=bool, default=True,
-                        help='function to perform')
+                        help='whether to search detailed info')
 
     parser.add_argument('--refresh_info', type=bool, default=False,
                         help='Refresh local info ')
 
-    parser.add_argument('--show_order', type=str, default='time', choices=['cite_num','time'],
+    parser.add_argument('--show_order', type=str, default='cite_num', choices=['cite_num','time'],
                         help='the order to show papers ')
 
     parser.add_argument('--function', type=str, default='search', choices=['search'],
