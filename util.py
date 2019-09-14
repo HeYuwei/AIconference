@@ -9,6 +9,24 @@ import re
 import csv
 import time
 
+def gen_save_name(opt,func_name):
+    save_name = func_name + '_'
+    if 'arxiv' in opt.conf_list:
+        save_name += 'arxiv_'
+
+    for key in opt.keywords.keys():
+        if len(opt.keywords[key]) > 0:
+            save_name += key + '['
+            for w in opt.keywords[key]:
+                save_name += w + ','
+            save_name = save_name[:-1] + ']_'
+
+    save_name += 'time('
+    for t in opt.time_sec:
+        save_name += t + ','
+    save_name = save_name[:-1] + ')'
+    return save_name
+
 def assert_info(opt):
     if len(opt.conf_list) > 1 and 'arxiv' in opt.conf_list:
         assert False, 'arxiv must be acount solely!'
@@ -311,6 +329,8 @@ def gen_times(time_sec,conf_list = []):
         em = int(time_sec[1][2:])
 
         time_list = []
+        times = time.strftime('%Y %m %d', time.localtime(time.time())).split()
+        sys_time = times[0][2:] + times[1]
         while True:
             if sy > ey or (sy == ey and sm > em):
                 break
@@ -319,6 +339,13 @@ def gen_times(time_sec,conf_list = []):
             s_sm = str(sm)
             if sm < 10:
                 s_sm = '0' + s_sm
+
+            c_time = s_sy + s_sm
+
+            if int(sys_time) < int(c_time):
+                time_sec[1] = sys_time
+                print(c_time + ' is not reached.')
+                break
 
             time_list.append(s_sy + s_sm)
 
@@ -520,7 +547,7 @@ def search_with_keywords(opt):
     r_list = [r_list[i]/mr * max(count_list)/2 for i in range(len(t_count_list))]
     plt.plot(x,r_list)
     plt.show()
-    plt.savefig('trend.png')
+    plt.savefig('result/trend.png')
 
     return selected_items
 
