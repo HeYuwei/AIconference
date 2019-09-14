@@ -7,6 +7,7 @@ from urllib import parse
 import requests
 import re
 import csv
+import time
 
 def assert_info(opt):
     if len(opt.conf_list) > 1 and 'arxiv' in opt.conf_list:
@@ -63,23 +64,23 @@ def addTips(content,keywords):
             content = content.replace(word,'$$'+word+'$$')
     return content
 
-def get_titles(conf ,conf_info, time,with_a = False):
+def get_titles(conf ,conf_info, c_time,with_a = False):
     if conf == 'arxiv':
-        return get_arxiv_info(time = time,with_a = with_a)
+        return get_arxiv_info(c_time = c_time,with_a = with_a)
 
     if not os.path.exists('papers/' + conf):
         os.mkdir('papers/' + conf)
 
 
-    if (conf_info[conf]['hold_time'] == 'single' and int(time) % 2 == 0) or (conf_info[conf]['hold_time'] == 'double' and int(time) % 2 == 1):
-        print(conf + ' is not hold in ' + time)
+    if (conf_info[conf]['hold_time'] == 'single' and int(c_time) % 2 == 0) or (conf_info[conf]['hold_time'] == 'double' and int(c_time) % 2 == 1):
+        print(conf + ' is not hold in ' + c_time)
         return []
 
     suffix = ''
     if with_a:
         suffix += '_a'
 
-    fname = 'papers/' + conf + '/' + time + suffix + '.json'
+    fname = 'papers/' + conf + '/' + c_time + suffix + '.json'
 
     if os.path.exists(fname):
         with open(fname,'r',encoding='utf-8') as f:
@@ -88,7 +89,7 @@ def get_titles(conf ,conf_info, time,with_a = False):
     else:
         if conf_info[conf]['type'] == 'conf':
             if conf in ['cvpr','iccv']:
-                url = 'http://openaccess.thecvf.com/' + conf.upper() + time + '.py'
+                url = 'http://openaccess.thecvf.com/' + conf.upper() + c_time + '.py'
                 r = requests.get(url)
                 soup = BeautifulSoup(r.content, 'html.parser')
                 items = soup.find_all(class_ = 'ptitle')
@@ -101,7 +102,7 @@ def get_titles(conf ,conf_info, time,with_a = False):
 
 
             else:
-                titles = one_page_titles(conf, conf_info, time, volume='')
+                titles = one_page_titles(conf, conf_info, c_time, volume='')
 
                 if len(titles) == 0:
                     # print('There may be several volumes')
@@ -109,22 +110,22 @@ def get_titles(conf ,conf_info, time,with_a = False):
                     start_v = 1
                     while True:
                         volume = '-' + str(start_v)
-                        tmp_titles = one_page_titles(conf,conf_info, time, volume=volume)
+                        tmp_titles = one_page_titles(conf,conf_info, c_time, volume=volume)
                         if len(tmp_titles) == 0:
                             break
                         titles.extend(tmp_titles)
                         start_v += 1
         else:
             url = 'https://dblp.org/db/journals/' + conf + '/'
-            v_ind = 2019 - int(time)
+            v_ind = 2019 - int(c_time)
             r = requests.get(url)
             soup = BeautifulSoup(r.content, 'html.parser')
             v_info = soup.select('div#main > ul > li > a')[v_ind].text
             v_ind = re.split(r' |:', v_info)[1]
-            titles = one_page_titles(conf,conf_info, time, volume='')
+            titles = one_page_titles(conf,conf_info, c_time, volume='')
 
         if len(titles) == 0:
-            print(conf + time + ' does not exisit')
+            print(conf + c_time + ' does not exisit')
             return titles
             # return []
         else:
@@ -137,16 +138,16 @@ def get_titles(conf ,conf_info, time,with_a = False):
                 content[str(i)]['abstract'] = ''
                 content[str(i)]['cite_num'] = -1
                 content[str(i)]['conf'] = conf
-                content[str(i)]['time'] = time
+                content[str(i)]['time'] = c_time
 
             with open(fname,'w',encoding='utf8') as f:
                 json.dump(content,f)
 
             return content.values()
 
-def one_page_titles(conf,conf_info,time,volume = ''):
+def one_page_titles(conf,conf_info,c_time,volume = ''):
 
-    url = 'https://dblp.org/db/' + conf_info[conf]['type'] + '/' + conf_info[conf]['parent'] + '/' + conf + time + volume + '.html'
+    url = 'https://dblp.org/db/' + conf_info[conf]['type'] + '/' + conf_info[conf]['parent'] + '/' + conf + c_time + volume + '.html'
     # print(url)
     r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
@@ -163,12 +164,18 @@ def one_page_titles(conf,conf_info,time,volume = ''):
         titles.append((title,url))
     return titles
 
-def get_arxiv_info(time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = False):
+def get_arxiv_info(c_time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = False):
     suffix = ''
     if with_a:
         suffix = '_a'
 
-    f_name = 'papers/arxiv/' + time + suffix + '.json'
+    times = time.strftime('%Y %m %d', time.localtime(time.time())).split()
+    sys_time = times[0][2:] + times[1]
+    if int(sys_time) < int(c_time):
+        print(c_time + ' is not reached.')
+        return []
+
+    f_name = 'papers/arxiv/' + c_time + suffix + '.json'
 
     if os.path.exists(f_name):
         with open(f_name,'r') as f:
@@ -184,7 +191,7 @@ def get_arxiv_info(time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = F
         mkdir('papers/arxiv/')
 
         for field in fields:
-            url = root_url + '/list/' + field + '/' + time
+            url = root_url + '/list/' + field + '/' + c_time
             # print(url)
             r = requests.get(url)
             soup = BeautifulSoup(r.content, 'html.parser')
@@ -230,7 +237,7 @@ def get_arxiv_info(time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = F
                     paper_content[str(p_count)]['abstract'] = abstract
                     paper_content[str(p_count)]['cite_num'] = -1
                     paper_content[str(p_count)]['conf'] = 'arxiv'
-                    paper_content[str(p_count)]['time'] = time
+                    paper_content[str(p_count)]['time'] = c_time
 
                     p_count += 1
                     # print(title)
@@ -249,7 +256,7 @@ def get_arxiv_info(time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = F
                     paper_content[str(p_count)]['abstract'] = ''
                     paper_content[str(p_count)]['cite_num'] = -1
                     paper_content[str(p_count)]['conf'] = 'arxiv'
-                    paper_content[str(p_count)]['time'] = time
+                    paper_content[str(p_count)]['time'] = c_time
                     p_count += 1
 
                 # print(title + '\n')
@@ -457,13 +464,13 @@ def search_with_keywords(opt):
     conf_info = opt.conf_info
     selected_items = []
 
-    for time in time_list:
+    for c_time in time_list:
         count = 0
         t_count = 0
         for conf in conf_list:
             c_count = 0
-            print(conf + time)
-            items = get_titles(conf,conf_info,time)
+            print(conf + c_time)
+            items = get_titles(conf,conf_info,c_time)
             for item in items:
                 t_count += 1
                 s_text = item['title']
@@ -486,7 +493,7 @@ def search_with_keywords(opt):
 
                 selected_items.append(item)
 
-            cache_info(items, conf, time)
+            cache_info(items, conf, c_time)
 
         count_list.append(count)
         t_count_list.append(t_count)
@@ -600,10 +607,10 @@ def get_cite_num(p_item,soup):
     p_item['cite_num'] = cite_num
     return cite_num
 
-def cache_info(items,conf,time):
+def cache_info(items,conf,c_time):
     suffix = ''
 
-    fname = 'papers/' + conf + '/' + time + suffix + '.json'
+    fname = 'papers/' + conf + '/' + c_time + suffix + '.json'
     paper_content = {}
     for p_count, item in enumerate(items):
         paper_content[str(p_count)] = item
