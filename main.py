@@ -3,10 +3,10 @@ from util import ex_funtion, assert_info, init_conf_info
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, conflict_handler="resolve")
-    # parser.add_argument('--conf_list', type = object , default=['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr','mm'],
-    #                     help='The conferences or journal to reserach.')
-    parser.add_argument('--conf_list', type = object , default=['arxiv'],
+    parser.add_argument('--conf_list', type = object , default=['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr','mm'],
                         help='The conferences or journal to reserach.')
+    # parser.add_argument('--conf_list', type = object , default=['arxiv'],
+    #                     help='The conferences or journal to reserach.')
 
     parser.add_argument('--time_sec', type = object, default=['2016','2019'],
                         help= 'The time range to research')
