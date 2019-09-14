@@ -185,6 +185,7 @@ def get_arxiv_info(time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a = F
 
         for field in fields:
             url = root_url + '/list/' + field + '/' + time
+            # print(url)
             r = requests.get(url)
             soup = BeautifulSoup(r.content, 'html.parser')
 
