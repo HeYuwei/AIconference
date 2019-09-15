@@ -108,8 +108,7 @@ def get_titles(conf ,conf_info, c_time,with_a = False):
         if conf_info[conf]['type'] == 'conf':
             if conf in ['cvpr','iccv']:
                 url = 'http://openaccess.thecvf.com/' + conf.upper() + c_time + '.py'
-                r = requests.get(url)
-                soup = BeautifulSoup(r.content, 'html.parser')
+                soup = get_soup(url)
                 items = soup.find_all(class_ = 'ptitle')
                 titles = []
                 for item in items:
@@ -136,8 +135,7 @@ def get_titles(conf ,conf_info, c_time,with_a = False):
         else:
             url = 'https://dblp.org/db/journals/' + conf + '/'
             v_ind = 2019 - int(c_time)
-            r = requests.get(url)
-            soup = BeautifulSoup(r.content, 'html.parser')
+            soup = get_soup(url)
             v_info = soup.select('div#main > ul > li > a')[v_ind].text
             v_ind = re.split(r' |:', v_info)[1]
             titles = one_page_titles(conf,conf_info, c_time, volume='')
@@ -167,8 +165,7 @@ def one_page_titles(conf,conf_info,c_time,volume = ''):
 
     url = 'https://dblp.org/db/' + conf_info[conf]['type'] + '/' + conf_info[conf]['parent'] + '/' + conf + c_time + volume + '.html'
     # print(url)
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
+    soup = get_soup(url)
 
     if conf_info[conf]['type'] == 'conf':
         items = soup.find_all(class_='entry inproceedings')
@@ -211,16 +208,14 @@ def get_arxiv_info(c_time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a =
         for field in fields:
             url = root_url + '/list/' + field + '/' + c_time
             # print(url)
-            r = requests.get(url)
-            soup = BeautifulSoup(r.content, 'html.parser')
+            soup = get_soup(url)
 
             page = soup.find(id='dlpage')
             all_parts = page.select('small')[1]
             all_url = all_parts.select('a')[2]['href']
             url = root_url + all_url
 
-            r = requests.get(url)
-            soup = BeautifulSoup(r.content, 'html.parser')
+            soup = get_soup(url)
 
             page = soup.find(id='dlpage')
 
@@ -244,8 +239,7 @@ def get_arxiv_info(c_time,fields=['math.OC','cs.LG','stat.ML','cs.CV'], with_a =
                     # p_url = root_url + ids[ind].find(title='Abstract')['href']
 
                     p_url = urls[ind]
-                    r = requests.get(p_url)
-                    soup = BeautifulSoup(r.content, 'html.parser')
+                    soup = get_soup(p_url)
                     title = soup.find(class_='title mathjax').text.lstrip('Title:')
                     abstract = soup.find(class_='abstract mathjax').text
 
@@ -471,8 +465,7 @@ def supply_basic_info(item,conf,refresh_info):
         url = root + '/academic/search?q='
         url_title = parse.quote(title)
         url += url_title
-        r = requests.get(url)
-        soup = BeautifulSoup(r.content, 'html.parser')
+        soup = get_soup(url)
 
     if not with_abstract:
         get_abstract(item,soup,conf)
@@ -551,6 +544,16 @@ def search_with_keywords(opt):
 
     return selected_items
 
+def get_soup(url):
+    for i in range(10):
+        try:
+            r = requests.get(url)
+            soup = BeautifulSoup(r.content, 'html.parser')
+            return soup
+        except:
+            print('the internet is in trouble, try again')
+    return None
+
 def get_abstract(item,soup,conf):
     # url = 'http://proceedings.mlr.press/v48/guha16.html'
     # url = 'https://www.ijcai.org/proceedings/2019/419'
@@ -558,8 +561,7 @@ def get_abstract(item,soup,conf):
 
     if conf == 'arxiv':
         p_url = item['url']
-        r = requests.get(p_url)
-        soup = BeautifulSoup(r.content, 'html.parser')
+        soup = get_soup(p_url)
         ab = soup.find(class_='abstract mathjax').text
         ab = ab.lstrip()
         ab = ab.replace('Abstract:','')
@@ -577,32 +579,31 @@ def get_abstract(item,soup,conf):
 
     if included:
 
-        r = requests.get(url)
-        soup = BeautifulSoup(r.content, 'html.parser')
-        text_list = get_children_text(soup)
-        title_list = get_children_title(soup)
-        text_list.extend(title_list)
-        for ind,text in enumerate(text_list):
-            # print(text)
-            if text == '摘　　要':
-                ab = get_longest_text(text_list)
-                # ab = text_list[ind + 2]
-                # print('the ab')
-                # print(ab)
-                ab = ab.lstrip()
-                ab = break_line(ab)
-                item['abstract'] = ab
-                return ab
+        soup = get_soup(url)
+        if soup is not None:
+
+            text_list = get_children_text(soup)
+            title_list = get_children_title(soup)
+            text_list.extend(title_list)
+            for ind,text in enumerate(text_list):
+                # print(text)
+                if text == '摘　　要':
+                    ab = get_longest_text(text_list)
+                    # ab = text_list[ind + 2]
+                    # print('the ab')
+                    # print(ab)
+                    ab = ab.lstrip()
+                    ab = break_line(ab)
+                    item['abstract'] = ab
+                    return ab
 
     url = item['url']
-    try:
-        r = requests.get(url)
-    except:
-        ab = 'the internet is in trouble'
+    soup = get_soup(url)
+    if soup is None:
+        print('The internet is in trouble!')
         item['abstract'] = ''
-        return ab
+        return ''
 
-    soup = BeautifulSoup(r.content, 'html.parser')
     text_list = get_children_text(soup)
     try:
         ab = get_longest_text(text_list)
@@ -613,24 +614,39 @@ def get_abstract(item,soup,conf):
     item['abstract'] = ab
     return ab
 
+def minDistance(str1, str2):
+    matrix = [[i + j for j in range(len(str2) + 1)] for i in range(len(str1) + 1)]
+
+    for i in range(1, len(str1) + 1):
+        for j in range(1, len(str2) + 1):
+            if str1[i - 1] == str2[j - 1]:
+                d = 0
+            else:
+                d = 1
+            matrix[i][j] = min(matrix[i - 1][j] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j - 1] + d)
+
+    return matrix[len(str1)][len(str2)]
+
 def get_cite_num(p_item,soup):
+    cite_num = -1
+    items = soup.find_all(class_='aca_algo')[:5]
 
-    try:
-        item = soup.find(class_ = 'aca_algo')
-    except:
-        return -1
+    for item in items:
+        tmp_title = item.select('h2 > a')[0].text
+        if minDistance(p_item['title'], tmp_title) > 10:
+            continue
+        try:
+            cite_num = 0
+            item = item.find(class_='caption_venue')
+            for i in range(len(item.contents)):
+                value = str(item.contents[i])
+                if value.startswith('被'):
+                    cite_num = int(item.select('a')[1].text)
+                    break
+        except:
+            pass
+        break
 
-    cite_num = 0
-    try:
-        item = item.find(class_ = 'caption_venue')
-        for i in range(len(item.contents)):
-            value = str(item.contents[i])
-            if value.startswith('被'):
-                cite_num = int(item.select('a')[1].text)
-                break
-    except:
-        pass
-        # return cite_num
     p_item['cite_num'] = cite_num
     return cite_num
 
