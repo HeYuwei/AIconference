@@ -1,0 +1,896 @@
+1. bayesian robust attributed graph clustering: joint learning of partial anomalies and group structure.
+https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16363
+被引数：955    aaai2018
+Abstract
+html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.d
+td"
+
+2. a loss framework for calibrated anomaly detection.
+http://papers.nips.cc/paper/7422-a-loss-framework-for-calibrated-anomaly-detection
+被引数：285    nips2018
+Abstract
+One way to describe anomalies is by saying that anomalies are not concentrated. This leads to the pr
+oblem of finding level sets for the data generating density. We interpret this learning problem as a
+ binary classification problem and compare the corresponding classification risk with the standard p
+erformance measure for the density level problem. In particular it turns out that the empirical clas
+sification risk can serve as an empirical performance measure for the anomaly detection problem. Thi
+s allows us to compare different anomaly detection algorithms empirically, i.e. with the help of a t
+est set. Furthermore, by the above interpretation we can give a strong justification for the well-kn
+own heuristic of artificially sampling "labeled" samples, provided that the sampling plan is well ch
+osen. In particular this enables us to propose a support vector machine (SVM) for anomaly detection 
+for which we can easily establish universal consistency. Finally, we report some experiments which c
+ompare our SVM to other commonly used methods including the standard one-class SVM.
+
+3. a discriminative framework for anomaly detection in large videos.
+https://doi.org/10.1007/978-3-319-46454-1_21
+被引数：134    eccv2016
+Abstract
+Obtaining models that capture imaging markers relevant for disease progression and treatment monitor
+ing is challenging. Models are typically based on large amounts of data with annotated examples of k
+nown markers aiming at automating detection. High annotation effort and the limitation to a vocabula
+ry of known markers limit the power of such approaches. Here, we perform unsupervised learning to id
+entify anomalies in imaging data as candidates for markers. We propose AnoGAN, a deep convolutional 
+generative adversarial network to learn a manifold of normal anatomical variability, accompanying a 
+novel anomaly scoring scheme based on the mapping from image space to a latent space. Applied to new
+ data, the model labels anomalies, and scores image patches indicating their fit into the learned di
+stribution. Results on optical coherence tomography images of the retina demonstrate that the approa
+ch correctly identifies anomalous images, such as images containing retinal fluid or hyperreflective
+ foci.
+
+4. a system for spatiotemporal anomaly localization in surveillance videos.
+https://doi.org/10.1145/3123266.3127912
+被引数：83    mm2017
+Abstract
+... but we have temporarily restricted your access to the Digital Library.
+Your activity appears to 
+be coming from some type of automated process.
+To ensure the availability of the Digital Library we 
+can not allow these types of requests to continue.
+The restriction will be removed automatically onc
+e this activity stops.
+
+
+5. deep structured energy based models for anomaly detection.
+http://proceedings.mlr.press/v48/zhai16.html
+被引数：45    icml2016
+Abstract
+In this paper, we attack the anomaly detection problem by directly modeling the data distribution wi
+th deep architectures. We propose deep structured energy based models (DSEBMs), where the energy fun
+ction is the output of a deterministic deep neural network with structure. We develop novel model ar
+chitectures to integrate EBMs with different types of data such as static data, sequential data, and
+ spatial data, and apply appropriate model architectures to adapt to the data structure. Our trainin
+g algorithm is built upon the recent development of score matching \cite{sm}, which connects an EBM 
+with a regularized autoencoder, eliminating the need for complicated sampling method. Statistically 
+sound decision criterion can be derived for anomaly detection purpose from the perspective of the en
+ergy landscape of the data distribution. We investigate two decision criteria for performing anomaly
+ detection: the energy score and the reconstruction error. Extensive empirical studies on benchmark 
+tasks demonstrate that our proposed model consistently matches or outperforms all the competing meth
+ods.
+
+6. deep autoencoding gaussian mixture model for unsupervised anomaly detection.
+https://openreview.net/forum?id=BJJLHbb0-
+被引数：42    iclr2018
+Abstract
+Unsupervised anomaly detection on multi- or high-dimensional data is of great importance in both fun
+damental machine learning research and industrial applications, for which density estimation lies at
+ the core. Although previous approaches based on dimensionality reduction followed by density estima
+tion have made fruitful progress, they mainly suffer from decoupled model learning with inconsistent
+ optimization goals and incapability of preserving essential information in the low-dimensional spac
+e. In this paper, we present a Deep Autoencoding Gaussian Mixture Model (DAGMM) for unsupervised ano
+maly detection. Our model utilizes a deep autoencoder to generate a low-dimensional representation a
+nd reconstruction error for each input data point, which is further fed into a Gaussian Mixture Mode
+l (GMM). Instead of using decoupled two-stage training and the standard Expectation-Maximization (EM
+) algorithm, DAGMM jointly optimizes the parameters of the deep autoencoder and the mixture model si
+multaneously in an end-to-end fashion, leveraging a separate estimation network to facilitate the pa
+rameter learning of the mixture model. The joint optimization, which well balances autoencoding reco
+nstruction, density estimation of latent representation, and regularization, helps the autoencoder e
+scape from less attractive local optima and further reduce reconstruction errors, avoiding the need 
+of pre-training. Experimental results on several public benchmark datasets show that, DAGMM signific
+antly outperforms state-of-the-art anomaly detection techniques, and achieves up to 14% improvement 
+based on the standard F1 score.
+
+7. a revisit of sparse coding based anomaly detection in stacked rnn framework
+http://openaccess.thecvf.com/content_iccv_2017/html/Luo_A_Revisit_of_ICCV_2017_paper.html
+被引数：27    iccv2017
+Abstract
+Motivated by the capability of sparse coding based anomaly detection, we propose a Temporally-cohere
+nt Sparse Coding (TSC) where we enforce similar neighbouring frames be encoded with similar reconstr
+uction coefficients. Then we map the TSC with a special type of stacked Recurrent Neural Network (sR
+NN). By taking advantage of sRNN in learning all parameters simultaneously, the nontrivial hyper-par
+ameter selection to TSC can be avoided, meanwhile with a shallow sRNN, the reconstruction coefficien
+ts can be inferred within a forward pass, which reduces the computational cost for learning sparse c
+oefficients. The contributions of this paper are two-fold: i) We propose a TSC, which can be mapped 
+to a sRNN which facilitates the parameter optimization and accelerates the anomaly prediction. ii) W
+e build a very large dataset which is even larger than the summation of all existing dataset for ano
+maly detection in terms of both the volume of data and the diversity of scenes. Extensive experiment
+s on both a toy dataset and real datasets demonstrate that our TSC based and sRNN based method consi
+stently outperform existing methods, which validates the effectiveness of our method.
+
+8. entity embedding-based anomaly detection for heterogeneous categorical events.
+http://www.ijcai.org/Abstract/16/201
+被引数：20    ijcai2016
+Abstract
+Anomaly detection plays an important role in modern data-driven security applications, such as detec
+ting suspicious access to a socket from a process. In many cases, such events can be described as a 
+collection of categorical values that are considered as entities of different types, which we call h
+eterogeneous categorical events. Due to the lack of intrinsic distance measures among entities, and 
+the exponentially large event space, most existing work relies heavily on heuristics to calculate ab
+normal scores for events. Different from previous work, we propose a principled and unified probabil
+istic model APE (Anomaly detection via Probabilistic pairwise interaction and Entity embedding) that
+ directly models the likelihood of events. In this model, we embed entities into a common latent spa
+ce using their observed co-occurrence in different events. More specifically, we first model the com
+patibility of each pair of entities according to their embeddings. Then we utilize the weighted pair
+wise interactions of different entity types to define the event probability. Using Noise-Contrastive
+ Estimation with "context-dependent" noise distribution, our model can be learned efficiently regard
+less of the large event space. Experimental results on real enterprise surveillance data show that o
+ur methods can accurately detect abnormal events compared to other state-of-the-art abnormal detecti
+on techniques.
+
+9. real-world anomaly detection in surveillance videos
+http://openaccess.thecvf.com/content_cvpr_2018/html/Sultani_Real-World_Anomaly_Detection_CVPR_2018_paper.html
+被引数：17    cvpr2018
+Abstract
+Surveillance videos are able to capture a variety of realistic anomalies. In this paper, we propose 
+to learn anomalies by exploiting both normal and anomalous videos. To avoid annotating the anomalous
+ segments or clips in training videos, which is very time consuming, we propose to learn anomaly thr
+ough the deep multiple instance ranking framework by leveraging weakly labeled training videos, i.e.
+ the training labels (anomalous or normal) are at video-level instead of clip-level. In our approach
+, we consider normal and anomalous videos as bags and video segments as instances in multiple instan
+ce learning (MIL), and automatically learn a deep anomaly ranking model that predicts high anomaly s
+cores for anomalous video segments. Furthermore, we introduce sparsity and temporal smoothness const
+raints in the ranking loss function to better localize anomaly during training. We also introduce a 
+new large-scale first of its kind dataset of 128 hours of videos. It consists of 1900 long and untri
+mmed real-world surveillance videos, with 13 realistic anomalies such as fighting, road accident, bu
+rglary, robbery, etc. as well as normal activities. This dataset can be used for two tasks. First, g
+eneral anomaly detection considering all anomalies in one group and all normal activities in another
+ group. Second, for recognizing each of 13 anomalous activities. Our experimental results show that 
+our MIL method for anomaly detection achieves significant improvement on anomaly detection performan
+ce as compared to the state-of-the-art approaches. We provide the results of several recent deep lea
+rning baselines on anomalous activity recognition. The low recognition performance of these baseline
+s reveals that our dataset is very challenging and opens more opportunities for future work.
+
+10. radar: residual analysis for anomaly detection in attributed networks.
+https://doi.org/10.24963/ijcai.2017/299
+被引数：14    ijcai2017
+Abstract
+Attributed networks are pervasive in different domains, ranging from social networks, gene regulator
+y networks to financial transaction networks. This kind of rich network representation presents chal
+lenges for anomaly detection due to the heterogeneity of two data representations. A vast majority o
+f existing algorithms assume certain properties of anomalies are given a prior. Since various types 
+of anomalies in real-world attributed networks coexist, the assumption that priori knowledge regardi
+ng anomalies is available does not hold. In this paper, we investigate the problem of anomaly detect
+ion in attributed networks generally from a residual analysis perspective, which has been shown to b
+e effective in traditional anomaly detection problems. However, it is a non-trivial task in attribut
+ed networks as interactions among instances complicate the residual modeling process. Methodological
+ly, we propose a learning framework to characterize the residuals of attribute information and its c
+oherence with network information for anomaly detection. By learning and analyzing the residuals, we
+ detect anomalies whose behaviors are singularly different from the majority. Experiments on real da
+tasets show the effectiveness and generality of the proposed framework.
+
+11. unmasking the abnormal events in video
+http://openaccess.thecvf.com/content_iccv_2017/html/Ionescu_Unmasking_the_Abnormal_ICCV_2017_paper.html
+被引数：14    iccv2017
+Abstract
+We propose a novel framework for abnormal event detection in video that requires no training sequenc
+es. Our framework is based on unmasking, a technique previously used for authorship verification in 
+text documents, which we adapt to our task. We iteratively train a binary classifier to distinguish 
+between two consecutive video sequences while removing at each step the most discriminant features. 
+Higher training accuracy rates of the intermediately obtained classifiers represent abnormal events.
+ To the best of our knowledge, this is the first work to apply unmasking for a computer vision task.
+ We compare our method with several state-of-the-art supervised and unsupervised methods on four ben
+chmark data sets. The empirical results indicate that our abnormal event detection framework can ach
+ieve state-of-the-art results, while running in real-time at 20 frames per second.
+
+12. deep representation for abnormal event detection in crowded scenes.
+https://doi.org/10.1145/2964284.2967290
+被引数：11    mm2016
+Abstract
+Abnormal event detection is extremely important, especially for video surveillance. Nowadays, many d
+etectors have been proposed based on hand-crafted features. However, it remains challenging to effec
+tively distinguish abnormal events from normal ones. This paper proposes a deep representation based
+ algorithm which extracts features in an unsupervised fashion. Specially, appearance, texture, and s
+hort-term motion features are automatically learned and fused with stacked denoising autoencoders. S
+ubsequently, long-term temporal clues are modeled with a long short-term memory (LSTM) recurrent net
+work, in order to discover meaningful regularities of video events. The abnormal events are identifi
+ed as samples which disobey these regularities. Moreover, this paper proposes a spatial anomaly dete
+ction strategy via manifold ranking, aiming at excluding false alarms. Experiments and comparisons o
+n real world datasets show that the proposed algorithm outperforms state of the arts for the abnorma
+l event detection problem in crowded scenes.
+
+13. spatio-temporal autoencoder for video anomaly detection.
+https://doi.org/10.1145/3123266.3123451
+被引数：11    mm2017
+Abstract
+Anomalous events detection in real-world video scenes is a challenging problem due to the complexity
+ of "anomaly" as well as the cluttered backgrounds, objects and motions in the scenes. Most existing
+ methods use hand-crafted features in local spatial regions to identify anomalies. In this paper, we
+ propose a novel model called Spatio-Temporal AutoEncoder (ST AutoEncoder or STAE), which utilizes d
+eep neural networks to learn video representation automatically and extracts features from both spat
+ial and temporal dimensions by performing 3-dimensional convolutions. In addition to the reconstruct
+ion loss used in existing typical autoencoders, we introduce a weight-decreasing prediction loss for
+ generating future frames, which enhances the motion feature learning in videos. Since most anomaly 
+detection datasets are restricted to appearance anomalies or unnatural motion anomalies, we collecte
+d a new challenging dataset comprising a set of real-world traffic surveillance videos. Several expe
+riments are performed on both the public benchmarks and our traffic dataset, which show that our pro
+posed method remarkably outperforms the state-of-the-art approaches.
+
+14. joint detection and recounting of abnormal events by learning deep generic knowledge
+http://openaccess.thecvf.com/content_iccv_2017/html/Hinami_Joint_Detection_and_ICCV_2017_paper.html
+被引数：11    iccv2017
+Abstract
+This paper addresses the problem of joint detection and recounting of abnormal events in videos. Rec
+ounting of abnormal events, i.e., explaining why they are judged to be abnormal, is an unexplored bu
+t critical task in video surveillance, because it helps human observers quickly judge if they are fa
+lse alarms or not. To describe the events in the human-understandable form for event recounting, lea
+rning generic knowledge about visual concepts (e.g., object and action) is crucial. Although convolu
+tional neural networks (CNNs) have achieved promising results in learning such concepts, it remains 
+an open question as to how to effectively use CNNs for abnormal event detection, mainly due to the e
+nvironment-dependent nature of the anomaly detection. In this paper, we tackle this problem by integ
+rating a generic CNN model and environment-dependent anomaly detectors. Our approach first learns CN
+N with multiple visual tasks to exploit semantic information that is useful for detecting and recoun
+ting abnormal events. By appropriately plugging the model into anomaly detectors, we can detect and 
+recount abnormal events while taking advantage of the discriminative power of CNNs. Our approach out
+performs the state-of-the-art on Avenue and UCSD Ped2 benchmarks for abnormal event detection and al
+so produces promising results of abnormal event recounting.
+
+15. deep anomaly detection with outlier exposure.
+https://openreview.net/forum?id=HyxCxhRcY7
+被引数：10    iclr2019
+Abstract
+It is important to detect anomalous inputs when deploying machine learning systems. The use of large
+r and more complex inputs in deep learning magnifies the difficulty of distinguishing between anomal
+ous and in-distribution examples. At the same time, diverse image and text data are available in eno
+rmous quantities. We propose leveraging these data to improve deep anomaly detection by training ano
+maly detectors against an auxiliary dataset of outliers, an approach we call Outlier Exposure (OE). 
+This enables anomaly detectors to generalize and detect unseen anomalies. In extensive experiments o
+n natural language processing and small- and large-scale vision tasks, we find that Outlier Exposure
+ significantly improves detection performance. We also observe that cutting-edge generative models t
+rained on CIFAR-10 may assign higher likelihoods to SVHN images than to CIFAR-10 images; we use OE t
+o mitigate this issue. We also analyze the flexibility and robustness of Outlier Exposure, and ident
+ify characteristics of the auxiliary dataset that improve performance.
+
+16. what's wrong with that object? identifying images of unusual objects by modelling the detection score distribution
+http://openaccess.thecvf.com/content_cvpr_2016/html/Wang_Whats_Wrong_With_CVPR_2016_paper.html
+被引数：7    cvpr2016
+Abstract
+This paper studies the challenging problem of identifying unusual instances of known objects in imag
+es within an "open world" setting. That is, we aim to find objects that are members of a known class
+, but which are not typical of that class. Thus the "unusual object" should be distinguished from bo
+th the "regular object" and the "other objects". Such unusual objects may be of interest in many app
+lications such as surveillance or quality control. We propose to identify unusual objects by inspect
+ing the distribution of object detection scores at multiple image regions. The key observation motiv
+ating our approach is that "regular object" images, "unusual object" images and "other objects" imag
+es exhibit different region-level scores in terms of both the score values and the spatial distribut
+ions. To model these distributions we propose to use Gaussian Processes (GP) to construct two separa
+te generative models, one for the "regular object" and the other for the "other objects". More speci
+fically, we design a new covariance function to simultaneously model the detection score at a single
+ location and the score dependencies between multiple regions. We demonstrate that the proposed appr
+oach outperforms comparable methods on a new large dataset constructed for the purpose.
+
+17. online weighted clustering for real-time abnormal event detection in video surveillance.
+https://doi.org/10.1145/2964284.2967279
+被引数：5    mm2016
+Abstract
+Detecting abnormal events in video surveillance is a challenging problem due to the large scale, str
+eam fashion video data as well as the real-time constraint. In this paper, we present an online, ada
+ptive, and real-time framework to address this problem. The spatial locations in a frame is partitio
+ned into grids, in each grid the proposed Adaptive Multi-scale Histogram Optical Flow (AMHOF) featur
+es are extracted and modelled by an Online Weighted Clustering (OWC) algorithm. The AMHOFs which can
+not be fit to a cluster with large weight are regarded as abnormal events. The OWC algorithm is simp
+le to implement and computational efficient. In addition, we improve the detection performance by a 
+Multiple Target Tracking (MTT) algorithm. Experimental results demonstrate our approach outperforms 
+the state-of-the-art approaches in pixel-level rate of detection at a processing speed of 30 FPS.
+
+18. deep anomaly detection using geometric transformations.
+http://papers.nips.cc/paper/8183-deep-anomaly-detection-using-geometric-transformations
+被引数：5    nips2018
+Abstract
+We consider the problem of anomaly detection in images, and present a new detection technique. Given
+ a sample of images, all known to belong to a normal'' class (e.g., dogs), we show how to train a de
+ep neural model that can detect out-of-distribution images (i.e., non-dog objects). The main idea be
+hind our scheme is to train a multi-class model to discriminate between dozens of geometric transfor
+mations applied on all the given images. The auxiliary expertise learned by the model generates feat
+ure detectors that effectively identify, at test time, anomalous images based on the softmax activat
+ion statistics of the model when applied on transformed images. We present extensive experiments usi
+ng the proposed detector, which indicate that our algorithm improves state-of-the-art methods by a w
+ide margin.
+
+19. future frame prediction for anomaly detection – a new baseline
+http://openaccess.thecvf.com/content_cvpr_2018/html/Liu_Future_Frame_Prediction_CVPR_2018_paper.html
+被引数：5    cvpr2018
+Abstract
+Anomaly detection in videos refers to the identification of events that do not conform to expected b
+ehavior. However, almost all existing methods tackle the problem by minimizing the reconstruction er
+rors of training data, which cannot guarantee a larger reconstruction error for an abnormal event. I
+n this paper, we propose to tackle the anomaly detection problem within a video prediction framework
+. To the best of our knowledge, this is the first work that leverages the difference between a predi
+cted future frame and its ground truth to detect an abnormal event. To predict a future frame with h
+igher quality for normal events, other than the commonly used appearance (spatial) constraints on in
+tensity and gradient, we also introduce a motion (temporal) constraint in video prediction by enforc
+ing the optical flow between predicted frames and ground truth frames to be consistent, and this is 
+the first work that introduces a temporal constraint into the video prediction task. Such spatial an
+d motion constraints facilitate the future frame prediction for normal events, and consequently faci
+litate to identify those abnormal events that do not conform the expectation. Extensive experiments 
+on both a toy dataset and some publicly available datasets validate the effectiveness of our method 
+in terms of robustness to the uncertainty in normal events and the sensitivity to abnormal events
+
+20. a deep neural network for unsupervised anomaly detection and diagnosis in multivariate time series data.
+https://aaai.org/ojs/index.php/AAAI/article/view/3942
+被引数：4    aaai2019
+Abstract
+Nowadays, multivariate time series data are increasingly collected in various real world systems, e.
+g., power plants, wearable devices, etc. Anomaly detection and diagnosis in multivariate time series
+ refer to identifying abnormal status in certain time steps and pinpointing the root causes. Buildin
+g such a system, however, is challenging since it not only requires to capture the temporal dependen
+cy in each time series, but also need encode the inter-correlations between different pairs of time 
+series. In addition, the system should be robust to noise and provide operators with different level
+s of anomaly scores based upon the severity of different incidents. Despite the fact that a number o
+f unsupervised anomaly detection algorithms have been developed, few of them can jointly address the
+se challenges. In this paper, we propose a Multi-Scale Convolutional Recurrent Encoder-Decoder (MSCR
+ED), to perform anomaly detection and diagnosis in multivariate time series data. Specifically, MSCR
+ED first constructs multi-scale (resolution) signature matrices to characterize multiple levels of t
+he system statuses in different time steps. Subsequently, given the signature matrices, a convolutio
+nal encoder is employed to encode the inter-sensor (time series) correlations and an attention based
+ Convolutional Long-Short Term Memory (ConvLSTM) network is developed to capture the temporal patter
+ns. Finally, based upon the feature maps which encode the inter-sensor correlations and temporal inf
+ormation, a convolutional decoder is used to reconstruct the input signature matrices and the residu
+al signature matrices are further utilized to detect and diagnose anomalies. Extensive empirical stu
+dies based on a synthetic dataset and a real power plant dataset demonstrate that MSCRED can outperf
+orm state-of-the-art baseline methods.
+
+21. stochastic online anomaly analysis for streaming time series.
+https://doi.org/10.24963/ijcai.2017/445
+被引数：4    ijcai2017
+Abstract
+Identifying patterns in time series that exhibit anomalous behavior is of increasing importance in m
+any domains, such as financial and Web data analysis. In real applications, time series data often a
+rrive continuously, and usually only a single scan is allowed through the data. Batch learning and r
+etrospective segmentation methods would not be well applicable to such scenarios. In this paper, we 
+present an online nonparametric Bayesian method OLAD for anomaly analysis in streaming time series. 
+Moreover, we develop a novel and efficient online learning approach for the OLAD model based on stoc
+hastic gradient descent. The proposed method can effectively learn the underlying dynamics of anomal
+y-contaminated heavy-tailed time series and identify potential anomalous events. Empirical analysis 
+on real-world datasets demonstrates the effectiveness of our method.
+		    
+
+22. toward a taxonomy and computational models of abnormalities in images.
+http://www.aaai.org/ocs/index.php/AAAI/AAAI16/paper/view/12280
+被引数：4    aaai2016
+Abstract
+The human visual system can spot an abnormal image, and reason about what makes it strange. This tas
+k has not received enough attention in computer vision. In this paper we study various types of atyp
+icalities in images in a more comprehensive way than has been done before. We propose a new dataset 
+of abnormal images showing a wide range of atypicalities. We design human subject experiments to dis
+cover a coarse taxonomy of the reasons for abnormality. Our experiments reveal three major categorie
+s of abnormality: object-centric, scene-centric, and contextual. Based on this taxonomy, we propose 
+a comprehensive computational model that can predict all different types of abnormality in images an
+d outperform prior arts in abnormality recognition.
+
+23. the unusual suspects: deep learning based mining of interesting entity trivia from knowledge graphs.
+http://aaai.org/ocs/index.php/AAAI/AAAI17/paper/view/14585
+被引数：3    aaai2017
+Abstract
+Not Accessible
+
+24. anomalous: a joint modeling approach for anomaly detection on attributed networks.
+https://doi.org/10.24963/ijcai.2018/488
+被引数：3    ijcai2018
+Abstract
+The key point of anomaly detection on attributed networks lies in the seamless integration of networ
+k structure information and attribute information. A vast majority of existing works are mainly base
+d on the Homophily assumption that implies the nodal attribute similarity of connected nodes. Noneth
+eless, this assumption is untenable in practice as the existence of noisy and structurally irrelevan
+t attributes may adversely affect the anomaly detection performance. Despite the fact that recent at
+tempts perform subspace selection to address this issue, these algorithms treat subspace selection a
+nd anomaly detection as two separate steps which often leads to suboptimal solutions. In this paper,
+ we investigate how to fuse attribute and network structure information more synergistically to avoi
+d the adverse effects brought by noisy and structurally irrelevant attributes. Methodologically, we 
+propose a novel joint framework to conduct attribute selection and anomaly detection as a whole base
+d on CUR decomposition and residual analysis. By filtering out noisy and irrelevant node attributes,
+ we perform anomaly detection with the remaining representative attributes. Experimental results on 
+both synthetic and real-world datasets corroborate the effectiveness of the proposed framework.
+		  
+  
+
+25. multi-view anomaly detection via robust probabilistic latent variable models.
+http://papers.nips.cc/paper/6456-multi-view-anomaly-detection-via-robust-probabilistic-latent-variable-models
+被引数：3    nips2016
+Abstract
+We propose probabilistic latent variable models for multi-view anomaly detection, which is the task 
+of finding instances that have inconsistent views given multi-view data. With the proposed model, al
+l views of a non-anomalous instance are assumed to be generated from a single latent vector. On the 
+other hand, an anomalous instance is assumed to have multiple latent vectors, and its different view
+s are generated from different latent vectors. By inferring the number of latent vectors used for ea
+ch instance with Dirichlet process priors, we obtain multi-view anomaly scores. The proposed model c
+an be seen as a robust extension of probabilistic canonical correlation analysis for noisy multi-vie
+w data. We present Bayesian inference procedures for the proposed model based on a stochastic EM alg
+orithm. The effectiveness of the proposed model is demonstrated in terms of performance when detecti
+ng multi-view anomalies.
+
+26. temporal anomaly detection: calibrating the surprise.
+https://aaai.org/ojs/index.php/AAAI/article/view/4261
+被引数：2    aaai2019
+Abstract
+We propose a hybrid approach to temporal anomaly detection in access data of users to databases --- 
+or more generally, any kind of subject-object co-occurrence data. We consider a high-dimensional set
+ting that also requires fast computation at test time. Our methodology identifies anomalies based on
+ a single stationary model, instead of requiring a full temporal one, which would be prohibitive in 
+this setting. We learn a low-rank stationary model from the training data, and then fit a regression
+ model for predicting the expected likelihood score of normal access patterns in the future. The dis
+parity between the predicted likelihood score and the observed one is used to assess the `surprise' 
+at test time. This approach enables calibration of the anomaly score, so that time-varying normal be
+havior patterns are not considered anomalous. We provide a detailed description of the algorithm, in
+cluding a convergence analysis, and report encouraging empirical results. One of the data sets that 
+we tested, TDA, is new for the public domain. It consists of two months' worth of database access re
+cords from a live system. Our code is publicly available at https://github.com/eyalgut/TLR_anomaly_d
+etection.git. The TDA data set is available at https://www.kaggle.com/eyalgut/binary-traffic-matrice
+s.
+
+27. deep into hypersphere: robust and unsupervised anomaly discovery in dynamic networks.
+https://doi.org/10.24963/ijcai.2018/378
+被引数：2    ijcai2018
+Abstract
+The increasing and flexible use of autonomous systems in many domains -- from intelligent transporta
+tion systems, information systems, to business transaction management -- has led to challenges in un
+derstanding the "normal" and "abnormal" behaviors of those systems. As the systems may be composed o
+f internal states and relationships among sub-systems, it requires not only warning users to anomalo
+us situations but also provides "transparency" about how the anomalies deviate from normalcy for mor
+e appropriate intervention. We propose a unified anomaly discovery framework "DeepSphere" that simul
+taneously meet the above two requirements -- identifying the anomalous cases and further exploring t
+he cases' anomalous structure localized in spatial and temporal context. DeepSphere leverages deep a
+utoencoders and hypersphere learning methods, having the capability of isolating anomaly pollution a
+nd reconstructing normal behaviors. DeepSphere does not rely on human annotated samples and can gene
+ralize to unseen data. Extensive experiments on both synthetic and real datasets demonstrate the con
+sistent and robust performance of the proposed method.
+		    
+
+28. learning competitive and discriminative reconstructions for anomaly detection.
+https://aaai.org/ojs/index.php/AAAI/article/view/4451
+被引数：1    aaai2019
+Abstract
+Most of the existing methods for anomaly detection use only positive data to learn the data distribu
+tion, thus they usually need a pre-defined threshold at the detection stage to determine whether a t
+est instance is an outlier. Unfortunately, a good threshold is vital for the performance and it is r
+eally hard to find an optimal one. In this paper, we take the discriminative information implied in 
+unlabeled data into consideration and propose a new method for anomaly detection that can learn the 
+labels of unlabelled data directly. Our proposed method has an end-to-end architecture with one enco
+der and two decoders that are trained to model inliers and outliers' data distributions in a competi
+tive way. This architecture works in a discriminative manner without suffering from overfitting, and
+ the training algorithm of our model is adopted from SGD, thus it is efficient and scalable even for
+ large-scale datasets. Empirical studies on 7 datasets including KDD99, MNIST, Caltech-256, and Imag
+eNet etc. show that our model outperforms the state-of-the-art methods.
+
+29. mantra-net: manipulation tracing network for detection and localization of image forgeries with anomalous features
+http://openaccess.thecvf.com/content_CVPR_2019/html/Wu_ManTra-Net_Manipulation_Tracing_Network_for_Detection_and_Localization_of_Image_CVPR_2019_paper.html
+被引数：1    cvpr2019
+Abstract
+To fight against real-life image forgery, which  commonly involves different types and combined mani
+pulations, we propose a unified deep neural architecture called ManTra-Net. Unlike many existing sol
+utions, ManTra-Net is an end-to-end network that performs both detection and localization without ex
+tra preprocessing and postprocessing. \manifold   is a fully convolutional network and handles image
+s of arbitrary sizes and many known forgery types such splicing, copy-move, removal, enhancement, an
+d even unknown types. This paper has three salient contributions. We design a simple yet effective s
+elf-supervised learning task to learn robust image manipulation traces from classifying 385 image ma
+nipulation types. Further, we formulate the forgery localization problem as a local anomaly detectio
+n problem, design a Z-score feature to capture local anomaly, and propose a novel long short-term me
+mory solution to assess local anomalies. Finally, we carefully conduct ablation experiments to syste
+matically optimize the proposed network design. Our extensive experimental results demonstrate the g
+eneralizability, robustness and superiority of ManTra-Net, not only in single types of manipulations
+/forgeries, but also in their complicated combinations. 
+
+30. object-centric auto-encoders and dummy anomalies for abnormal event detection in video
+http://openaccess.thecvf.com/content_CVPR_2019/html/Ionescu_Object-Centric_Auto-Encoders_and_Dummy_Anomalies_for_Abnormal_Event_Detection_in_CVPR_2019_paper.html
+被引数：1    cvpr2019
+Abstract
+Abnormal event detection in video is a challenging vision problem. Most existing approaches formulat
+e abnormal event detection as an outlier detection task, due to the scarcity of anomalous data durin
+g training. Because of the lack of prior information regarding abnormal events, these methods are no
+t fully-equipped to differentiate between normal and abnormal events. In this work, we formalize abn
+ormal event detection as a one-versus-rest binary classification problem. Our contribution is two-fo
+ld. First, we introduce an unsupervised feature learning framework based on object-centric convoluti
+onal auto-encoders to encode both motion and appearance information. Second, we propose a supervised
+ classification approach based on clustering the training samples into normality clusters. A one-ver
+sus-rest abnormal event classifier is then employed to separate each normality cluster from the rest
+. For the purpose of training the classifier, the other clusters act as dummy anomalies. During infe
+rence, an object is labeled as abnormal if the highest classification score assigned by the one-vers
+us-rest classifiers is negative. Comprehensive experiments are performed on four benchmarks: Avenue,
+ ShanghaiTech, UCSD and UMN. Our approach provides superior results on all four data sets. On the la
+rge-scale ShanghaiTech data set, our method provides an absolute gain of 8.4% in terms of frame-leve
+l AUC compared to the state-of-the-art method.
+
+31. a framework for anomaly reasoning: interpretation through concept formation for knowledge transfer and lifelong learning.
+http://www.ijcai.org/Abstract/16/594
+被引数：1    ijcai2016
+Abstract
+I am developing a framework for anomaly reasoning for agents that plan and learn in complex, sometim
+es unfamiliar domains. Anomaly reasoning encompasses recognizing, interpreting, and reacting to unfa
+miliar objects or familiar objects appearing in unexpected contexts. As a first approach, I propose 
+an interpretation method in which agents form concepts from perceptions to create new representation
+s for use in planning and decision making. An anomaly reasoning framework will make agents more vers
+atile, facilitate learning transfer by pruning irrelevant features, relate new to known phenomena wi
+th appropriate similarity metrics, and guide an agent to aspects of the environment most significant
+ to its goals.
+
+32. anomaly detection using autoencoders in high performance computing systems.
+https://aaai.org/ojs/index.php/AAAI/article/view/4993
+被引数：0    aaai2019
+Abstract
+We test our approach on a real supercomputer equipped with a fine-grained, scalable monitoring infra
+structure that can provide large amount of data to characterize the system behaviour. The results ar
+e extremely promising: after the training phase to learn the normal system behaviour, our method is 
+capable of detecting anomalies that have never been seen before with a very good accuracy (values ra
+nging between 88% and 96%).
+
+33. uncovering specific-shape graph anomalies in attributed graphs.
+https://aaai.org/ojs/index.php/AAAI/article/view/4483
+被引数：0    aaai2019
+Abstract
+constraints in attributed graphs. Our approach can be used to many different graph anomaly settings.
+ The traditional approaches can only support linear cost functions (e.g., an aggregation function fo
+r the summation of node weights). However, our approach can employ more powerful nonlinear cost func
+tions, and enjoys a rigorous theoretical guarantee on the near-optimal solution with the geometrical
+ convergence rate.
+
+34. multi-view anomaly detection: neighborhood in locality matters.
+https://aaai.org/ojs/index.php/AAAI/article/view/4418
+被引数：0    aaai2019
+Abstract
+Identifying anomalies in multi-view data is a difficult task due to the complicated data characteris
+tics of anomalies. Specifically, there are two types of anomalies in multi-view data–anomalies that 
+have inconsistent features across multiple views and anomalies that are consistently anomalous in ea
+ch view. Existing multi-view anomaly detection approaches have some issues, e.g., they assume multip
+le views of a normal instance share consistent and normal clustering structures while anomaly exhibi
+ts anomalous clustering characteristics across multiple views. When there are no clusters in data, i
+t is difficult for existing approaches to detect anomalies. Besides, existing approaches construct a
+ profile of normal instances, then identify instances that do not conform to the normal profile as a
+nomalies. The objective is formulated to profile normal instances, but not to estimate the set of no
+rmal instances, which results in sub-optimal detectors. In addition, the model trained to profile no
+rmal instances uses the entire dataset including anomalies. However, anomalies could undermine the m
+odel, i.e., the model is not robust to anomalies. To address these issues, we propose the nearest ne
+ighborbased MUlti-View Anomaly Detection (MUVAD) approach. Specifically, we first propose an anomaly
+ measurement criterion and utilize this criterion to formulate the objective of MUVAD to estimate th
+e set of normal instances explicitly. We further develop two concrete relaxations for implementing t
+he MUVAD as MUVAD-QPR and MUVAD-FSR. Experimental results validate the superiority of the proposed M
+UVAD approaches.
+
+35. anomaly detection with multiple-hypotheses predictions.
+http://proceedings.mlr.press/v97/nguyen19b.html
+被引数：0    icml2019
+Abstract
+In one-class-learning tasks, only the normal case (foreground) can be modeled with data, whereas the
+ variation of all possible anomalies is too erratic to be described by samples. Thus, due to the lac
+k of representative data, the wide-spread discriminative approaches cannot cover such learning tasks
+, and rather generative models,which attempt to learn the input density of the foreground, are used.
+ However, generative models suffer from a large input dimensionality (as in images) and are typicall
+y inefficient learners.We propose to learn the data distribution of the foreground more efficiently 
+with a multi-hypotheses autoencoder. Moreover, the model is criticized by a discriminator, which pre
+vents artificial data modes not supported by data, and which enforces diversity across hypotheses. O
+ur multiple-hypotheses-based anomaly detection framework allows the reliable identification of out-o
+f-distribution samples. For anomaly detection on CIFAR-10, it yields up to 3.9% points improvement o
+ver previously reported results. On a real anomaly detection task, the approach reduces the error of
+ the baseline models from 6.8% to 1.5%.
+  
+
+36. beatgan: anomalous rhythm detection using adversarially generated time series.
+https://doi.org/10.24963/ijcai.2019/616
+被引数：0    ijcai2019
+Abstract
+Given a large-scale rhythmic time series containing mostly normal data segments (or `beats'), can we
+ learn how to detect anomalous beats in an effective yet efficient way? For example, how can we dete
+ct anomalous beats from electrocardiogram (ECG) readings? Existing approaches either require excessi
+vely high amounts of labeled and balanced data for classification, or rely on less regularized recon
+structions, resulting in lower accuracy in anomaly detection. Therefore, we propose BeatGAN, an unsu
+pervised anomaly detection algorithm for time series data. BeatGAN outputs explainable results to pi
+npoint the anomalous time ticks of an input beat, by comparing them to adversarially generated beats
+. Its robustness is guaranteed by its regularization of reconstruction error using an adversarial ge
+neration approach, as well as data augmentation using time series warping. Experiments show that Bea
+tGAN accurately and efficiently detects anomalous beats in ECG time series, and routes doctors' atte
+ntion to anomalous time ticks, achieving accuracy of nearly 0.95 AUC, and very fast inference (2.6 m
+s per beat). In addition, we show that BeatGAN accurately detects unusual motions from multivariate 
+motion-capture time series data, illustrating its generality.
+		    
+
+37. margin learning embedded prediction for video anomaly detection with a few anomalies.
+https://doi.org/10.24963/ijcai.2019/419
+被引数：0    ijcai2019
+Abstract
+Classical semi-supervised video anomaly detection assumes that only normal data are available in the
+ training set because of the rare and unbounded nature of anomalies. It is obviously, however, these
+ infrequently observed abnormal events can actually help with the detection of identical or similar 
+abnormal events, a line of thinking that motivates us to study open-set supervised anomaly detection
+ with only a few types of abnormal observed events and many normal events available. Under the assum
+ption that normal events can be well predicted, we propose a Margin Learning Embedded Prediction (ML
+EP) framework. There are three features in MLEP- based open-set supervised video anomaly detection: 
+i) we customize a video prediction framework that favors the prediction of normal events and distort
+s the prediction of abnormal events; ii) The margin learning framework learns a more compact normal 
+data distribution and enlarges the margin between normal and abnormal events. Since abnormal events 
+are unbounded, our framework consequently helps with the detection of abnormal events, even for anom
+alies that have never been previously observed. Therefore, our framework is suitable for the open-se
+t supervised anomaly detection setting; iii) our framework can readily handle both frame-level and v
+ideo-level anomaly annotations. Considering that video-level anomaly detection is more easily annota
+ted in practice and that anomaly detection with a few anomalies is a more practical setting, our wor
+k thus pushes the application of anomaly detection towards real scenarios. Extensive experiments val
+idate the effectiveness of our framework for anomaly detection.
+		    
+
+38. loganomaly: unsupervised detection of sequential and quantitative anomalies in unstructured logs.
+https://doi.org/10.24963/ijcai.2019/658
+被引数：0    ijcai2019
+Abstract
+Recording runtime status via logs is common for almost every computer system, and detecting anomalie
+s in logs is crucial for timely identifying malfunctions of systems. However, manually detecting ano
+malies for logs is time-consuming, error-prone, and infeasible. Existing automatic log anomaly detec
+tion approaches, using indexes rather than semantics of log templates, tend to cause false alarms. I
+n this work, we propose LogAnomaly, a framework to model unstructured a log stream as a natural lang
+uage sequence. Empowered by template2vec, a novel, simple yet effective method to extract the semant
+ic information hidden in log templates, LogAnomaly can detect both sequential and quantitive log ano
+malies simultaneously, which were not done by any previous work. Moreover, LogAnomaly can avoid the 
+false alarms caused by the newly appearing log templates between periodic model retrainings. Our eva
+luation on two public production log datasets show that LogAnomaly outperforms existing log-based an
+omaly detection methods.
+		    
+
+39. a decomposition approach for urban anomaly detection across spatiotemporal data.
+https://doi.org/10.24963/ijcai.2019/837
+被引数：0    ijcai2019
+Abstract
+Urban anomalies such as abnormal flow of crowds and traffic accidents could result in loss of life o
+r property if not handled properly. Detecting urban anomalies at the early stage is important to min
+imize the adverse effects. However, urban anomaly detection is difficult due to two challenges: a) t
+he criteria of urban anomalies varies with different locations and time; b) urban anomalies of diffe
+rent types may show different signs. In this paper, we propose a decomposing approach to address the
+se two challenges. Specifically, we decompose urban dynamics into the normal component and the abnor
+mal component. The normal component is merely decided by spatiotemporal features, while the abnormal
+ component is caused by anomalous events. Then, we extract spatiotemporal features and estimate the 
+normal component accordingly. At last, we derive the abnormal component to identify anomalies. We ev
+aluate our method using both real-world and synthetic datasets. The results show our method can dete
+ct meaningful events and outperforms state-of-the-art anomaly detecting methods by a large margin.
+	
+	    
+
+40. addgraph: anomaly detection in dynamic graph using attention-based temporal gcn.
+https://doi.org/10.24963/ijcai.2019/614
+被引数：0    ijcai2019
+Abstract
+Anomaly detection in dynamic graphs becomes very critical in many different application scenarios, e
+.g., recommender systems, while it also raises huge challenges due to the high flexible nature of an
+omaly and lack of sufficient labelled data. It is better to learn the anomaly patterns by considerin
+g all possible features including the structural, content and temporal features, rather than utilizi
+ng heuristic rules over the partial features. In this paper, we propose AddGraph, a general end-to-e
+nd anomalous edge detection framework using an extended temporal GCN (Graph Convolutional Network) w
+ith an attention model, which can capture both long-term patterns and the short-term patterns in dyn
+amic graphs. In order to cope with insufficient explicit labelled data, we employ the negative sampl
+ing and margin loss in training of AddGraph in a semi-supervised fashion. We conduct extensive exper
+iments on real-world datasets, and illustrate that AddGraph can outperform the state-of-the-art comp
+etitors in anomaly detection significantly.
+		    
+
+41. robust anomaly detection in videos using multilevel representations.
+https://aaai.org/ojs/index.php/AAAI/article/view/4456
+被引数：0    aaai2019
+Abstract
+Detecting anomalies in surveillance videos has long been an important but unsolved problem. In parti
+cular, many existing solutions are overly sensitive to (often ephemeral) visual artifacts in the raw
+ video data, resulting in false positives and fragmented detection regions. To overcome such sensiti
+vity and to capture true anomalies with semantic significance, one natural idea is to seek validatio
+n from abstract representations of the videos. This paper introduces a framework of robust anomaly d
+etection using multilevel representations of both intensity and motion data. The framework consists 
+of three main components: 1) representation learning using Denoising Autoencoders, 2) level-wise rep
+resentation generation using Conditional Generative Adversarial Networks, and 3) consolidating anoma
+lous regions detected at each representation level. Our proposed multilevel detector shows a signifi
+cant improvement in pixel-level Equal Error Rate, namely 11
+
+42. towards experienced anomaly detector through reinforcement learning.
+https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16048
+被引数：0    aaai2018
+Abstract
+html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.d
+td"
+
+43. learning regularity in skeleton trajectories for anomaly detection in videos
+http://openaccess.thecvf.com/content_CVPR_2019/html/Morais_Learning_Regularity_in_Skeleton_Trajectories_for_Anomaly_Detection_in_Videos_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+Appearance features have been widely used in video anomaly detection even though they contain comple
+x entangled factors. We propose a new method to model the normal patterns of human movements in surv
+eillance video for anomaly detection using dynamic skeleton features. We decompose the skeletal move
+ments into two sub-components: global body movement and local body posture. We model the dynamics an
+d interaction of the coupled features in our novel Message-Passing Encoder-Decoder Recurrent Network
+. We observed that the decoupled features collaboratively interact in our spatio-temporal model to a
+ccurately identify human-related irregular events from surveillance video sequences. Compared to tra
+ditional appearance-based models, our method achieves superior outlier detection performance. Our mo
+del also offers "open-box" examination and decision explanation made possible by the semantically un
+derstandable features and a network architecture supporting interpretability.
+
+44. graph convolutional label noise cleaner: train a plug-and-play action classifier for anomaly detection
+http://openaccess.thecvf.com/content_CVPR_2019/html/Zhong_Graph_Convolutional_Label_Noise_Cleaner_Train_a_Plug-And-Play_Action_Classifier_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+Video anomaly detection under weak labels is formulated as a typical multiple-instance learning prob
+lem in previous works. In this paper, we provide a new perspective, i.e., a supervised learning task
+ under noisy labels. In such a viewpoint, as long as cleaning away label noise, we can directly appl
+y fully supervised action classifiers to weakly supervised anomaly detection, and take maximum advan
+tage of these well-developed classifiers. For this purpose, we devise a graph convolutional network 
+to correct noisy labels. Based upon feature similarity and temporal consistency, our network propaga
+tes supervisory signals from high-confidence snippets to low-confidence ones. In this manner, the ne
+twork is capable of providing cleaned supervision for action classifiers. During the test phase, we 
+only need to obtain snippet-wise predictions from the action classifier without any extra post-proce
+ssing. Extensive experiments on 3 datasets at different scales with 2 types of action classifiers de
+monstrate the efficacy of our method. Remarkably, we obtain the frame-level AUC score of 82.12% on U
+CF-Crime.
+
+45. detecting abnormality without knowing normality: a two-stage approach for unsupervised video abnormal event detection.
+https://doi.org/10.1145/3240508.3240615
+被引数：0    mm2018
+Abstract
+... but we have temporarily restricted your access to the Digital Library.
+Your activity appears to 
+be coming from some type of automated process.
+To ensure the availability of the Digital Library we 
+can not allow these types of requests to continue.
+The restriction will be removed automatically onc
+e this activity stops.
+
+
+46. efficient anomaly detection via matrix sketching.
+http://papers.nips.cc/paper/8030-efficient-anomaly-detection-via-matrix-sketching
+被引数：0    nips2018
+Abstract
+We consider the problem of finding anomalies in high-dimensional data using popular PCA based anomal
+y scores.  The naive algorithms for computing these scores explicitly compute the PCA of the covaria
+nce matrix which uses space quadratic in the dimensionality of the data. We give the first streaming
+ algorithms that use space that is linear or sublinear in the dimension. We prove general results sh
+owing that \emph{any} sketch of a matrix that satisfies a certain operator norm guarantee can be use
+d to approximate these scores. We instantiate these results with powerful matrix sketching technique
+s such as Frequent Directions and random projections to derive efficient and practical algorithms fo
+r these problems, which we validate over real-world data sets. Our main technical contribution is to
+ prove matrix perturbation inequalities for operators arising in the computation of these measures.
+
+47. positive and unlabeled learning for anomaly detection with multi-features.
+https://doi.org/10.1145/3123266.3123304
+被引数：0    mm2017
+Abstract
+... but we have temporarily restricted your access to the Digital Library.
+Your activity appears to 
+be coming from some type of automated process.
+To ensure the availability of the Digital Library we 
+can not allow these types of requests to continue.
+The restriction will be removed automatically onc
+e this activity stops.
+
+
+48. query-driven discovery of anomalous subgraphs in attributed graphs.
+https://doi.org/10.24963/ijcai.2017/433
+被引数：0    ijcai2017
+Abstract
+For a detection problem, a user often has some prior knowledge about the structure-specific subgraph
+s of interest, but few traditional approaches are capable of employing this knowledge. The main tech
+nical challenge is that few approaches can efficiently model the space of connected subgraphs that a
+re isomorphic to a query graph. We present a novel, efficient approach for optimizing a generic nonl
+inear cost function subject to a query-specific structural constraint. Our approach enjoys strong th
+eoretical guarantees on the convergence of a nearly optimal solution and a low time complexity. For 
+the case study, we specialize the nonlinear function to several well-known graph scan statistics for
+ anomalous subgraph discovery. Empirical evidence demonstrates that our method is superior to state-
+of-the-art methods in several real-world anomaly detection tasks.
+		    
+
+49. accelerated local anomaly detection via resolving attributed networks.
+https://doi.org/10.24963/ijcai.2017/325
+被引数：0    ijcai2017
+Abstract
+Attributed networks, in which network connectivity and node attributes are available, have been incr
+easingly used to model real-world information systems, such as social media and e-commerce platforms
+. While outlier detection has been extensively studied to identify anomalies that deviate from certa
+in chosen background, existing algorithms cannot be directly applied on attributed networks due to t
+he heterogeneous types of information and the scale of real-world data. Meanwhile, it has been obser
+ved that  local anomalies, which may align with global condition, are hard to be detected by existin
+g algorithms with interpretability. Motivated by the observations, in this paper, we propose to stud
+y the problem of effective and efficient local anomaly detection in attributed networks. In particul
+ar, we design a collective way for modeling heterogeneous network and attribute information, and dev
+elop a novel and efficient distributed optimization algorithm to handle large-scale data. In the exp
+eriments, we compare the proposed framework with the state-of-the-art methods on both real and synth
+etic datasets, and demonstrate its effectiveness and efficiency through quantitative evaluation and 
+case studies.
+		    
+
+50. deep abnormality detection in video data.
+https://doi.org/10.24963/ijcai.2017/768
+被引数：0    ijcai2017
+Abstract
+Automated detection of anomalous events plays an important role in video surveillance systems in pra
+ctice. This task, however, requires to deal with three challenging problems of the lack of annotated
+ training data, the inexact description of what to be "abnormal" and the expensive feature engineeri
+ng procedure. Most anomaly detection systems are only able to satisfy some of these challenges. In t
+his work, we propose a deep abnormality detection system to handle all of them simultaneously. Deep 
+abnormality detection is a deep generative network that is an unsupervised probabilistic framework t
+o model the normality and learn feature representation automatically. Furthermore, unlike other exis
+ting methods, our system can detect abnormality at multiple levels and be used as a powerful tool fo
+r video analysis and scene understanding.
+		    
+
+51. expecting the unexpected: training detectors for unusual pedestrians with adversarial imposters
+http://openaccess.thecvf.com/content_cvpr_2017/html/Huang_Expecting_the_Unexpected_CVPR_2017_paper.html
+被引数：0    cvpr2017
+Abstract
+As autonomous vehicles become an every-day reality, high-accuracy pedestrian detection is of paramou
+nt practical importance.  Pedestrian detection is a highly researched topic with mature methods,  bu
+t most datasets (for both training and evaluation) focus on common scenes of people engaged in typic
+al walking poses on sidewalks. But performance is most crucial for dangerous scenarios that are rare
+ly observed, such as children playing in the street and people using bicycles/skateboards in unexpec
+ted ways. Such "in-the-tail" data is notoriously hard to observe, making both training and testing d
+ifficult. To analyze this problem, we have collected a novel annotated dataset of dangerous scenario
+s called the Precarious Pedestrian dataset. Even given a  dedicated collection effort, it is relativ
+ely small by contemporary standards (~ 1000 images). To explore large-scale data-driven learning, we
+ explore the use of synthetic data generated by a game engine. A significant challenge is selected t
+he right "priors" or parameters for synthesis: we would like realistic data with realistic poses and
+ object configurations. Inspired by Generative Adversarial Networks, we generate a massive amount of
+ synthetic data and train a discriminative classifier to select a realistic subset (that fools the c
+lassifier), which we deem Synthetic Imposters. We demonstrate that this pipeline allows one to gener
+ate realistic (or adverserial) training data by making use of rendering/animation engines. Interesti
+ngly, we also demonstrate that such data can be used to rank algorithms, suggesting that Synthetic I
+mposters can also be used for "in-the-tail" validation at test-time, a notoriously difficult challen
+ge for real-world deployment. 
+
+52. abnormal event discovery in user generated photos.
+https://doi.org/10.1145/2964284.2975215
+被引数：0    mm2016
+Abstract
+... but we have temporarily restricted your access to the Digital Library.
+Your activity appears to 
+be coming from some type of automated process.
+To ensure the availability of the Digital Library we 
+can not allow these types of requests to continue.
+The restriction will be removed automatically onc
+e this activity stops.
+
+
+53. robust random cut forest based anomaly detection on streams.
+http://proceedings.mlr.press/v48/guha16.html
+被引数：0    icml2016
+Abstract
+In this paper we focus on the anomaly detection problem for dynamic data streams through the lens of
+ random cut forests. We investigate a robust random cut data structure that can be used as a sketch 
+or synopsis of the input stream. We provide a plausible definition of non-parametric anomalies based
+ on the influence of an unseen point on the remainder of the data, i.e., the externality imposed by 
+that point. We show how the sketch can be efficiently updated in a dynamic data stream. We demonstra
+te the viability of the algorithm on publicly available real data.
+  
+
+54. mvtec ad -- a comprehensive real-world dataset for unsupervised anomaly detection
+http://openaccess.thecvf.com/content_CVPR_2019/html/Bergmann_MVTec_AD_--_A_Comprehensive_Real-World_Dataset_for_Unsupervised_Anomaly_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+The detection of anomalous structures in natural image data is of utmost importance for numerous tas
+ks in the field of computer vision. The development of methods for unsupervised anomaly detection re
+quires data on which to train and evaluate new approaches and ideas. We introduce the MVTec Anomaly 
+Detection (MVTec AD) dataset containing 5354 high-resolution color images of different object and te
+xture categories. It contains normal, i.e., defect-free, images intended for training and images wit
+h anomalies intended for testing. The anomalies manifest themselves in the form of over 70 different
+ types of defects such as scratches, dents, contaminations, and various structural changes. In addit
+ion, we provide pixel-precise ground truth regions for all anomalies. We also conduct a thorough eva
+luation of current state-of-the-art unsupervised anomaly detection methods based on deep architectur
+es such as convolutional autoencoders, generative adversarial networks, and feature descriptors usin
+g pre-trained convolutional neural networks, as well as classical computer vision methods. This init
+ial benchmark indicates that there is considerable room for improvement. To the best of our knowledg
+e, this is the first comprehensive, multi-object, multi-defect dataset for anomaly detection that pr
+ovides pixel-accurate ground truth regions and focuses on real-world applications. 
+
+55. the unusual effectiveness of averaging in gan training.
+https://openreview.net/forum?id=SJgw_sRqFQ
+被引数：0    iclr2019
+Abstract
+We examine two different techniques for parameter averaging in GAN training. Moving Average (MA) com
+putes the time-average of parameters, whereas Exponential Moving Average (EMA) computes an exponenti
+ally discounted sum. Whilst MA is known to lead to convergence in bilinear settings, we provide the 
+-- to our knowledge -- first theoretical arguments in support of EMA. We show that EMA converges to 
+limit cycles around the equilibrium with vanishing amplitude as the discount parameter approaches on
+e for simple bilinear games and also enhances the stability of general GAN training. We establish ex
+perimentally that both techniques are strikingly effective in the non-convex-concave GAN setting as 
+well. Both improve inception and FID scores on different architectures and for different GAN objecti
+ves. We provide comprehensive experimental results across a range of datasets -- mixture of Gaussian
+s, CIFAR-10, STL-10, CelebA and ImageNet -- to demonstrate its effectiveness. We achieve state-of-th
+e-art results on CIFAR-10 and produce clean CelebA face images.\footnote{~The code is available at \
+url{https://github.com/yasinyazici/EMA_GAN}}
+

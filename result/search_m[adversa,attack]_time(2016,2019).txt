@@ -1,0 +1,1065 @@
+1. towards deep learning models resistant to adversarial attacks.
+https://openreview.net/forum?id=rJzIBfZAb
+被引数：479    iclr2018
+Abstract
+Recent work has demonstrated that neural networks are vulnerable to adversarial examples, i.e., inpu
+ts that are almost indistinguishable from natural data and yet classified incorrectly by the network
+. In fact, some of the latest findings suggest that the existence of adversarial attacks may be an i
+nherent weakness of deep learning models. To address this problem, we study the adversarial robustne
+ss of neural networks through the lens of robust optimization. This approach provides us with a broa
+d and unifying view on much of the prior work on this topic. Its principled nature also enables us t
+o identify methods for both training and attacking neural networks that are reliable and, in a certa
+in sense, universal. In particular, they specify a concrete security guarantee that would protect ag
+ainst any adversary. These methods let us train networks with significantly improved resistance to a
+ wide range of adversarial attacks. They also suggest the notion of security against a first-order a
+dversary as a natural and broad security guarantee. We believe that robustness against such well-def
+ined classes of adversaries is an important stepping stone towards fully resistant deep learning mod
+els.
+
+2. ensemble adversarial training: attacks and defenses.
+https://openreview.net/forum?id=rkZvSe-RZ
+被引数：319    iclr2018
+Abstract
+Adversarial examples are perturbed inputs designed to fool machine learning models. Adversarial trai
+ning injects such examples into training data to increase robustness. To scale this technique to lar
+ge datasets, perturbations are crafted using fast single-step methods that maximize a linear approxi
+mation of the model's loss. We show that this form of adversarial training converges to a degenerate
+ global minimum, wherein small curvature artifacts near the data points obfuscate a linear approxima
+tion of the loss. The model thus learns to generate weak perturbations, rather than defend against s
+trong ones. As a result, we find that adversarial training remains vulnerable to black-box attacks, 
+where we transfer perturbations computed on undefended models, as well as to a powerful novel single
+-step attack that escapes the non-smooth vicinity of the input data via a small random step. We furt
+her introduce Ensemble Adversarial Training, a technique that augments training data with perturbati
+ons transferred from other models. On ImageNet, Ensemble Adversarial Training yields models with str
+ong robustness to black-box attacks. In particular, our most robust model won the first round of the
+ NIPS 2017 competition on Defenses against Adversarial Attacks.
+
+3. defense-gan: protecting classifiers against adversarial attacks using generative models.
+https://openreview.net/forum?id=BkJ3ibb0-
+被引数：113    iclr2018
+Abstract
+In recent years, deep neural network approaches have been widely adopted for machine learning tasks,
+ including classification. However, they were shown to be vulnerable to adversarial perturbations: c
+arefully crafted small perturbations can cause misclassification of legitimate images. We propose De
+fense-GAN, a new framework leveraging the expressive capability of generative models to defend deep 
+neural networks against such attacks. Defense-GAN is trained to model the distribution of unperturbe
+d images. At inference time, it finds a close output to a given image which does not contain the adv
+ersarial changes. This output is then fed to the classifier. Our proposed method can be used with an
+y classification model and does not modify the classifier structure or training procedure. It can al
+so be used as a defense against any attack as it does not assume knowledge of the process for genera
+ting the adversarial examples. We empirically show that Defense-GAN is consistently effective agains
+t different attack methods and improves on existing defense strategies. Our code has been made publi
+cly available at this https URL
+
+4. learning to attack: adversarial transformation networks.
+https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16529
+被引数：98    aaai2018
+Abstract
+Multiple different approaches of generating adversarial examples have been proposed to attack deep n
+eural networks. These approaches involve either directly computing gradients with respect to the ima
+ge pixels, or directly solving an optimization on the image pixels. In this work, we present a funda
+mentally new method for generating adversarial examples that is fast to execute and provides excepti
+onal diversity of output. We efficiently train feed-forward neural networks in a self-supervised man
+ner to generate adversarial examples against a target network or set of networks. We call such a net
+work an Adversarial Transformation Network (ATN). ATNs are trained to generate adversarial examples 
+that minimally modify the classifier's outputs given the original input, while constraining the new 
+classification to match an adversarial target class. We present methods to train ATNs and analyze th
+eir effectiveness targeting a variety of MNIST classifiers as well as the latest state-of-the-art Im
+ageNet classifier Inception ResNet v2.
+
+5. delving into transferable adversarial examples and black-box attacks.
+https://openreview.net/forum?id=Sys6GJqxl
+被引数：78    iclr2017
+Abstract
+An intriguing property of deep neural networks is the existence of adversarial examples, which can t
+ransfer among different architectures. These transferable adversarial examples may severely hinder d
+eep neural network-based applications. Previous works mostly study the transferability using small s
+cale datasets. In this work, we are the first to conduct an extensive study of the transferability o
+ver large models and a large scale dataset, and we are also the first to study the transferability o
+f targeted adversarial examples with their target labels. We study both non-targeted and targeted ad
+versarial examples, and show that while transferable non-targeted adversarial examples are easy to f
+ind, targeted adversarial examples generated using existing approaches almost never transfer with th
+eir target labels. Therefore, we propose novel ensemble-based approaches to generating transferable 
+adversarial examples. Using such approaches, we observe a large proportion of targeted adversarial e
+xamples that are able to transfer with their target labels for the first time. We also present some 
+geometric studies to help understanding the transferable adversarial examples. Finally, we show that
+ the adversarial examples generated using ensemble-based approaches can successfully attack Clarifai
+.com, which is a black-box image classification system.
+
+6. ead: elastic-net attacks to deep neural networks via adversarial examples.
+https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16893
+被引数：77    aaai2018
+Abstract
+Recent studies have highlighted the vulnerability of deep neural networks (DNNs) to adversarial exam
+ples - a visually indistinguishable adversarial image can easily be crafted to cause a well-trained 
+model to misclassify. Existing methods for crafting adversarial examples are based on $L_2$ and $L_\
+infty$ distortion metrics. However, despite the fact that $L_1$ distortion accounts for the total va
+riation and encourages sparsity in the perturbation, little has been developed for crafting $L_1$-ba
+sed adversarial examples. In this paper, we formulate the process of attacking DNNs via adversarial 
+examples as an elastic-net regularized optimization problem. Our elastic-net attacks to DNNs (EAD) f
+eature $L_1$-oriented adversarial examples and include the state-of-the-art $L_2$ attack as a specia
+l case. Experimental results on MNIST, CIFAR10 and ImageNet show that EAD can yield a distinct set o
+f adversarial examples with small $L_1$ distortion and attains similar attack performance to the sta
+te-of-the-art methods in different attack scenarios. More importantly, EAD leads to improved attack 
+transferability and complements adversarial training for DNNs, suggesting novel insights on leveragi
+ng $L_1$ distortion in adversarial machine learning and security implications of DNNs.
+
+7. decision-based adversarial attacks: reliable attacks against black-box machine learning models.
+https://openreview.net/forum?id=SyZI0GWCZ
+被引数：67    iclr2018
+Abstract
+Many machine learning algorithms are vulnerable to almost imperceptible perturbations of their input
+s. So far it was unclear how much risk adversarial perturbations carry for the safety of real-world 
+machine learning applications because most methods used to generate such perturbations rely either o
+n detailed model information (gradient-based attacks) or on confidence scores such as class probabil
+ities (score-based attacks), neither of which are available in most real-world scenarios. In many su
+ch cases one currently needs to retreat to transfer-based attacks which rely on cumbersome substitut
+e models, need access to the training data and can be defended against. Here we emphasise the import
+ance of attacks which solely rely on the final model decision. Such decision-based attacks are (1) a
+pplicable to real-world black-box models such as autonomous cars, (2) need less knowledge and are ea
+sier to apply than transfer-based attacks and (3) are more robust to simple defences than gradient- 
+or score-based attacks. Previous attacks in this category were limited to simple models or simple da
+tasets. Here we introduce the Boundary Attack, a decision-based attack that starts from a large adve
+rsarial perturbation and then seeks to reduce the perturbation while staying adversarial. The attack
+ is conceptually simple, requires close to no hyperparameter tuning, does not rely on substitute mod
+els and is competitive with the best gradient-based attacks in standard computer vision tasks like I
+mageNet. We apply the attack on two black-box algorithms from Clarifai.com. The Boundary Attack in p
+articular and the class of decision-based attacks in general open new avenues to study the robustnes
+s of machine learning models and raise new questions regarding the safety of deployed machine learni
+ng systems. An implementation of the attack is available as part of Foolbox at this https URL .
+
+8. adversarial attacks on neural networks for graph data.
+https://doi.org/10.24963/ijcai.2019/872
+被引数：36    ijcai2019
+Abstract
+Deep learning models for graphs have achieved strong performance for the task of node classification
+. Despite their proliferation, currently there is no study of their robustness to adversarial attack
+s. Yet, in domains where they are likely to be used, e.g. the web, adversaries are common. Can deep 
+learning models for graphs be easily fooled? In this work, we introduce the first study of adversari
+al attacks on attributed graphs, specifically focusing on models exploiting ideas of graph convoluti
+ons. In addition to attacks at test time, we tackle the more challenging class of poisoning/causativ
+e attacks, which focus on the training phase of a machine learning model.We generate adversarial per
+turbations targeting the node's features and the graph structure, thus, taking the dependencies betw
+een instances in account. Moreover, we ensure that the perturbations remain unnoticeable by preservi
+ng important data characteristics. To cope with the underlying discrete domain we propose an efficie
+nt algorithm Nettack exploiting incremental computations. Our experimental study shows that accuracy
+ of node classification significantly drops even when performing only few perturbations. Even more, 
+our attacks are transferable: the learned attacks generalize to other state-of-the-art node classifi
+cation models and unsupervised approaches, and likewise are successful even when only limited knowle
+dge about the graph is given.
+
+9. defense against adversarial attacks using high-level representation guided denoiser
+http://openaccess.thecvf.com/content_cvpr_2018/html/Liao_Defense_Against_Adversarial_CVPR_2018_paper.html
+被引数：27    cvpr2018
+Abstract
+Neural networks are vulnerable to adversarial examples, which poses a threat to their application in
+ security sensitive systems. We propose high-level representation guided denoiser (HGD) as a defense
+ for image classification. Standard denoiser suffers from the error amplification effect, in which s
+mall residual adversarial noise is progressively amplified and leads to wrong classifications. HGD o
+vercomes this problem by using a loss function defined as the difference between the target model's 
+outputs activated by the clean image and denoised image. Compared with ensemble adversarial training
+ which is the state-of-the-art defending method on large images, HGD has three advantages. First, wi
+th HGD as a defense, the target model is more robust to either white-box or black-box adversarial at
+tacks. Second, HGD can be trained on a small subset of the images and generalizes well to other imag
+es and unseen classes. Third, HGD can be transferred to defend models other than the one guiding it.
+ In NIPS competition on defense against adversarial attacks, our HGD solution won the first place an
+d outperformed other models by a large margin.1
+
+10. a simple unified framework for detecting out-of-distribution samples and adversarial attacks.
+http://papers.nips.cc/paper/7947-a-simple-unified-framework-for-detecting-out-of-distribution-samples-and-adversarial-attacks
+被引数：22    nips2018
+Abstract
+Detecting test samples drawn sufficiently far away from the training distribution statistically or a
+dversarially is the fundamental requirement to deploy a good classifier in many real-world machine l
+earning applications. However, deep neural networks with the softmax classifier are known to produce
+ highly overconfident posterior distributions even for such abnormal samples. In this paper, we prop
+ose a simple yet effective method for detecting any abnormal samples, which is applicable to any pre
+-trained softmax neural classifier. We obtain the class conditional Gaussian distributions with resp
+ect to (low- and upper-level) features of the deep models under Gaussian discriminant analysis, whic
+h result in a confidence score based on the Mahalanobis distance. While most prior methods have been
+ evaluated for detecting either out-of-distribution or adversarial samples, but not both, the propos
+ed method achieves the state-of-art performances for both cases in our experiments. Moreover, we fou
+nd that our proposed method is more robust in extreme cases, e.g., when the training dataset has noi
+sy labels or small number of samples. Finally, we show that {the proposed method} enjoys broader usa
+ge by applying it to class incremental learning: whenever out-of-distribution samples are detected, 
+our classification rule can incorporate new classes well without further training deep models.
+
+11. adversarial attacks beyond the image space
+http://openaccess.thecvf.com/content_CVPR_2019/html/Zeng_Adversarial_Attacks_Beyond_the_Image_Space_CVPR_2019_paper.html
+被引数：17    cvpr2019
+Abstract
+Generating adversarial examples is an intriguing problem and an important way of understanding the w
+orking mechanism of deep neural networks. Recently, it has attracted a lot of attention in the compu
+ter vision community. Most existing approaches generated perturbations in image space, i.e., each pi
+xel can be modified independently. However, it remains unclear whether these adversarial examples ar
+e authentic, in the sense that they correspond to actual changes in physical properties. #R##N#This 
+paper aims at exploring this topic in the contexts of object classification and visual question answ
+ering. The baselines are set to be several state-of-the-art deep neural networks which receive 2D in
+put images. We augment these networks with a differentiable 3D rendering layer in front, so that a 3
+D scene (in physical space) is rendered into a 2D image (in image space), and then mapped to a predi
+ction (in output space). There are two (direct or indirect) ways of attacking the physical parameter
+s. The former back-propagates the gradients of error signals from output space to physical space dir
+ectly, while the latter first constructs an adversary in image space, and then attempts to find the 
+best solution in physical space that is rendered into this image. An important finding is that attac
+king physical space is much more difficult, as the direct method, compared with that used in image s
+pace, produces a much lower success rate and requires heavier perturbations to be added. On the othe
+r hand, the indirect method does not work out, suggesting that adversaries generated in image space 
+are inauthentic. By interpreting them in physical space, most of these adversaries can be filtered o
+ut, showing promise in defending adversaries.
+
+12. unravelling robustness of deep learning based face recognition against adversarial attacks.
+https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/17334
+被引数：17    aaai2018
+Abstract
+Deep neural network (DNN) architecture based models have high expressive power and learning capacity
+. However, they are essentially a black box method since it is not easy to mathematically formulate 
+the functions that are learned within its many layers of representation. Realizing this, many resear
+chers have started to design methods to exploit the drawbacks of deep learning based algorithms ques
+tioning their robustness and exposing their singularities. In this paper, we attempt to unravel thre
+e aspects related to the robustness of DNNs for face recognition: (i) assessing the impact of deep a
+rchitectures for face recognition in terms of vulnerabilities to attacks inspired by commonly observ
+ed distortions in the real world that are well handled by shallow learning methods along with learni
+ng based adversaries; (ii) detecting the singularities by characterizing abnormal filter response be
+havior in the hidden layers of deep networks; and (iii) making corrections to the processing pipelin
+e to alleviate the problem. Our experimental evaluation using multiple open-source DNN-based face re
+cognition networks, including OpenFace and VGG-Face, and two publicly available databases (MEDS and 
+PaSC) demonstrates that the performance of deep learning based face recognition algorithms can suffe
+r greatly in the presence of such distortions. The proposed method is also compared with existing de
+tection algorithms and the results show that it is able to detect the attacks with very high accurac
+y by suitably designing a classifier using the response of the hidden layers in the network. Finally
+, we present several effective countermeasures to mitigate the impact of adversarial attacks and imp
+rove the overall robustness of DNN-based face recognition.
+
+13. prior convictions: black-box adversarial attacks with bandits and priors.
+https://openreview.net/forum?id=BkMiWhR5K7
+被引数：15    iclr2019
+Abstract
+We study the problem of generating adversarial examples in a black-box setting in which only loss-or
+acle access to a model is available. We introduce a framework that conceptually unifies much of the 
+existing work on black-box attacks, and demonstrate that the current state-of-the-art methods are op
+timal in a natural sense. Despite this optimality, we show how to improve black-box attacks by bring
+ing a new element into the problem: gradient priors. We give a bandit optimization-based algorithm t
+hat allows us to seamlessly integrate any such priors, and we explicitly identify and incorporate tw
+o examples. The resulting methods use two to four times fewer queries and fail two to five times les
+s than the current state-of-the-art. The code for reproducing our work is available at https://git.i
+o/fAjOJ.
+
+14. adversarial attacks on graph neural networks via meta learning.
+https://openreview.net/forum?id=Bylnx209YX
+被引数：11    iclr2019
+Abstract
+Deep learning models for graphs have advanced the state of the art on many tasks. Despite their rece
+nt success, little is known about their robustness. We investigate training time attacks on graph ne
+ural networks for node classification that perturb the discrete graph structure.  Our core principle
+ is to use meta-gradients to solve the bilevel problem underlying training-time attacks, essentially
+ treating the graph as a hyperparameter to optimize. Our experiments show that small graph perturbat
+ions consistently lead to a strong decrease in performance for graph convolutional networks, and eve
+n transfer to unsupervised embeddings. Remarkably, the perturbations created by our algorithm can mi
+sguide the graph neural networks such that they perform worse than a simple baseline that ignores al
+l relational information. Our attacks do not assume any knowledge about or access to the target clas
+sifiers.
+
+15. robust audio adversarial example for a physical attack.
+https://doi.org/10.24963/ijcai.2019/741
+被引数：11    ijcai2019
+Abstract
+We propose a method to generate audio adversarial examples that can attack a state-of-the-art speech
+ recognition model in the physical world. Previous work assumes that generated adversarial examples 
+are directly fed to the recognition model, and is not able to perform such a physical attack because
+ of reverberation and noise from playback environments. In contrast, our method obtains robust adver
+sarial examples by simulating transformations caused by playback or recording in the physical world 
+and incorporating the transformations into the generation process. Evaluation and a listening experi
+ment demonstrated that our adversarial examples are able to attack without being noticed by humans. 
+This result suggests that audio adversarial examples generated by the proposed method may become a r
+eal threat.
+
+16. towards imperceptible and robust adversarial example attacks against neural networks.
+https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/view/16217
+被引数：7    aaai2018
+Abstract
+Machine learning systems based on deep neural networks, being able to produce state-of-the-art resul
+ts on various perception tasks, have gained mainstream adoption in many applications. However, they 
+are shown to be vulnerable to adversarial example attack, which generates malicious output by adding
+ slight perturbations to the input. Previous adversarial example crafting methods, however, use simp
+le metrics to evaluate the distances between the original examples and the adversarial ones, which c
+ould be easily detected by human eyes. In addition, these attacks are often not robust due to the in
+evitable noises and deviation in the physical world. In this work, we present a new adversarial exam
+ple attack crafting method, which takes the human perceptual system into consideration and maximizes
+ the noise tolerance of the crafted adversarial example. Experimental results demonstrate the effica
+cy of the proposed technique.
+
+17. distributionally adversarial attack.
+https://aaai.org/ojs/index.php/AAAI/article/view/4061
+被引数：7    aaai2019
+Abstract
+Recent work on adversarial attack has shown that Projected Gradient Descent (PGD) Adversary is a uni
+versal first-order adversary, and the classifier adversarially trained by PGD is robust against a wi
+de range of first-order attacks. It is worth noting that the original objective of an attack/defense
+ model relie…
+
+18. decoupling direction and norm for efficient gradient-based l2 adversarial attacks and defenses
+http://openaccess.thecvf.com/content_CVPR_2019/html/Rony_Decoupling_Direction_and_Norm_for_Efficient_Gradient-Based_L2_Adversarial_Attacks_CVPR_2019_paper.html
+被引数：6    cvpr2019
+Abstract
+Research on adversarial examples in computer vision tasks has shown that small, often imperceptible 
+changes to an image can induce misclassification, which has security implications for a wide range o
+f image processing systems. Considering $L_2$ norm distortions, the Carlini and Wagner attack is pre
+sently the most effective white-box attack in the literature. However, this method is slow since it 
+performs a line-search for one of the optimization terms, and often requires thousands of iterations
+. In this paper, an efficient approach is proposed to generate gradient-based attacks that induce mi
+sclassifications with low $L_2$ norm, by decoupling the direction and the norm of the adversarial pe
+rturbation that is added to the image. Experiments conducted on the MNIST, CIFAR-10 and ImageNet dat
+asets indicate that our attack achieves comparable results to the state-of-the-art (in terms of $L_2
+$ norm) with considerably fewer iterations (as few as 100 iterations), which opens the possibility o
+f using these attacks for adversarial training. Models trained with our attack achieve state-of-the-
+art robustness against white-box gradient-based $L_2$ attacks on the MNIST and CIFAR-10 datasets, ou
+tperforming the Madry defense when the attacks are limited to a maximum norm.
+
+19. an admm-based universal framework for adversarial attacks on deep neural networks.
+https://doi.org/10.1145/3240508.3240639
+被引数：6    mm2018
+Abstract
+Deep neural networks (DNNs) are known vulnerable to adversarial attacks. That is, adversarial exampl
+es, obtained by adding delicately crafted distortions onto original legal inputs, can mislead a DNN 
+to classify them as any target labels. In a successful adversarial attack, the targeted mis-classifi
+cation should be achieved with the minimal distortion added. In the literature, the added distortion
+s are usually measured by $L_0$, $L_1$, $L_2$, and $L_\infty $ norms, namely, L_0, L_1, L_2, and L_∞
+ attacks, respectively. However, there lacks a versatile framework for all types of adversarial atta
+cks. This work for the first time unifies the methods of generating adversarial examples by leveragi
+ng ADMM (Alternating Direction Method of Multipliers), an operator splitting optimization approach, 
+such that $L_0$, $L_1$, $L_2$, and $L_\infty $ attacks can be effectively implemented by this genera
+l framework with little modifications. Comparing with the state-of-the-art attacks in each category,
+ our ADMM-based attacks are so far the strongest, achieving both the 100% attack success rate and th
+e minimal distortion.
+
+20. resisting adversarial attacks using gaussian mixture variational autoencoders.
+https://aaai.org/ojs/index.php/AAAI/article/view/3828
+被引数：5    aaai2019
+Abstract
+Susceptibility of deep neural networks to adversarial attacks poses a major theoretical and practica
+l challenge. All efforts to harden classifiers against such attacks have seen limited success. Two d
+istinct categories of samples to which deep networks are vulnerable, "adversarial samples" and "fool
+ing samples", have been tackled separately so far due to the difficulty posed when considered togeth
+er. In this work, we show how one can address them both under one unified framework. We tie a discri
+minative model with a generative model, rendering the adversarial objective to entail a conflict. Ou
+r model has the form of a variational autoencoder, with a Gaussian mixture prior on the latent vecto
+r. Each mixture component of the prior distribution corresponds to one of the classes in the data. T
+his enables us to perform selective classification, leading to the rejection of adversarial samples 
+instead of misclassification. Our method inherently provides a way of learning a selective classifie
+r in a semi-supervised scenario as well, which can resist adversarial attacks. We also show how one 
+can reclassify the rejected adversarial samples.
+
+21. peernets: exploiting peer wisdom against adversarial attacks.
+https://openreview.net/forum?id=Sk4jFoA9K7
+被引数：5    iclr2019
+Abstract
+Deep learning systems have become ubiquitous in many aspects of our lives. Unfortunately, it has bee
+n shown that such systems are vulnerable to adversarial attacks, making them prone to potential unla
+wful uses. Designing deep neural networks that are robust to adversarial attacks is a fundamental st
+ep in making such systems safer and deployable in a broader variety of applications (e.g. autonomous
+ driving), but more importantly is a necessary step to design novel and more advanced architectures 
+built on new computational paradigms rather than marginally building on the existing ones. In this p
+aper we introduce PeerNets, a novel family of convolutional networks alternating classical Euclidean
+ convolutions with graph convolutions to harness information from a graph of peer samples. This resu
+lts in a form of non-local forward propagation in the model, where latent features are conditioned o
+n the global structure induced by the graph, that is up to 3 times more robust to a variety of white
+- and black-box adversarial attacks compared to conventional architectures with almost no drop in ac
+curacy.
+
+22. parametric noise injection: trainable randomness to improve deep neural network robustness against adversarial attack
+http://openaccess.thecvf.com/content_CVPR_2019/html/He_Parametric_Noise_Injection_Trainable_Randomness_to_Improve_Deep_Neural_Network_CVPR_2019_paper.html
+被引数：4    cvpr2019
+Abstract
+Recent development in the field of Deep Learning have exposed the underlying vulnerability of Deep N
+eural Network (DNN) against adversarial examples. In image classification, an adversarial example is
+ a carefully modified image that is visually imperceptible to the original image but can cause DNN m
+odel to misclassify it. Training the network with Gaussian noise is an effective technique to perfor
+m model regularization, thus improving model robustness against input variation. Inspired by this cl
+assical method, we explore to utilize the regularization characteristic of noise injection to improv
+e DNN's robustness against adversarial attack. In this work, we propose Parametric-Noise-Injection (
+PNI) which involves trainable Gaussian noise injection at each layer on either activation or weights
+ through solving the min-max optimization problem, embedded with adversarial training. These paramet
+ers are trained explicitly to achieve improved robustness. To the best of our knowledge, this is the
+ first work that uses trainable noise injection to improve network robustness against adversarial at
+tacks, rather than manually configuring the injected noise level through cross-validation. The exten
+sive results show that our proposed PNI technique effectively improves the robustness against a vari
+ety of powerful white-box and black-box attacks such as PGD, C & W, FGSM, transferable attack and ZO
+O attack. Last but not the least, PNI method improves both clean- and perturbed-data accuracy in com
+parison to the state-of-the-art defense methods, which outperforms current unbroken PGD defense by 1
+.1 % and 6.8 % on clean test data and perturbed test data respectively using Resnet-20 architecture.
+
+
+23. the limitations of adversarial training and the blind-spot attack.
+https://openreview.net/forum?id=HylTBhA5tQ
+被引数：4    iclr2019
+Abstract
+The adversarial training procedure proposed by Madry et al. (2018) is one of the most effective meth
+ods to defend against adversarial examples in deep neural networks (DNNs). In our paper, we shed som
+e lights on the practicality and the hardness of adversarial training by showing that the effectiven
+ess (robustness on test set) of adversarial training has a strong correlation with the distance betw
+een a test point and the manifold of training data embedded by the network. Test examples that are r
+elatively far away from this manifold are more likely to be vulnerable to adversarial attacks. Conse
+quentially, an adversarial training based defense is susceptible to a new class of attacks, the "bli
+nd-spot attack", where the input images reside in "blind-spots" (low density regions) of the empiric
+al distribution of training data but is still on the ground-truth data manifold. For MNIST, we found
+ that these blind-spots can be easily found by simply scaling and shifting image pixel values. Most 
+importantly, for large datasets with high dimensional and complex data manifold (CIFAR, ImageNet, et
+c), the existence of blind-spots in adversarial training makes defending on any valid test examples 
+difficult due to the curse of dimensionality and the scarcity of training data. Additionally, we fin
+d that blind-spots also exist on provable defenses including (Wong & Kolter, 2018) and (Sinha et al.
+, 2018) because these trainable robustness certificates can only be practically optimized on a limit
+ed set of training data.
+
+24. nattack: learning the distributions of adversarial examples for an improved black-box attack on deep neural networks.
+http://proceedings.mlr.press/v97/li19g.html
+被引数：3    icml2019
+Abstract
+Powerful adversarial attack methods are vital for understanding how to construct robust deep neural 
+networks (DNNs) and for thoroughly testing defense techniques. In this paper, we propose a black-box
+ adversarial attack algorithm that can defeat both vanilla DNNs and those generated by various defen
+se techniques developed recently. Instead of searching for an "optimal" adversarial example for a be
+nign input to a targeted DNN, our algorithm finds a probability density distribution over a small re
+gion centered around the input, such that a sample drawn from this distribution is likely an adversa
+rial example, without the need of accessing the DNN’s internal layers or weights. Our approach is un
+iversal as it can successfully attack different neural networks by a single algorithm. It is also st
+rong; according to the testing against 2 vanilla DNNs and 13 defended ones, it outperforms state-of-
+the-art black-box or white-box attack methods for most test cases. Additionally, our results reveal 
+that adversarial training remains one of the best defense techniques, and the adversarial examples a
+re not as transferable across defended DNNs as them across vanilla DNNs.
+  
+
+25. camou: learning physical vehicle camouflages to adversarially attack detectors in the wild.
+https://openreview.net/forum?id=SJgEl3A5tm
+被引数：3    iclr2019
+Abstract
+In this paper, we conduct an intriguing experimental study about the physical adversarial attack on 
+object detectors in the wild. In particular, we learn a camouflage pattern to hide vehicles from bei
+ng detected by state-of-the-art convolutional neural network based detectors. Our approach alternate
+s between two threads. In the first, we train a neural approximation function to imitate how a simul
+ator applies a camouflage to vehicles and how a vehicle detector performs given images of the camouf
+laged vehicles. In the second, we minimize the approximated detection score by searching for the opt
+imal camouflage. Experiments show that the learned camouflage can not only hide a vehicle from the i
+mage-based detectors under many test cases but also generalizes to different environments, vehicles,
+ and object detectors.
+
+26. simple black-box adversarial attacks.
+http://proceedings.mlr.press/v97/guo19a.html
+被引数：2    icml2019
+Abstract
+We propose an intriguingly simple method for the construction of adversarial images in the black-box
+ setting. In constrast to the white-box scenario, constructing black-box adversarial images has the 
+additional constraint on query budget, and efficient attacks remain an open problem to date. With on
+ly the mild assumption of continuous-valued confidence scores, our highly query-efficient algorithm 
+utilizes the following simple iterative principle: we randomly sample a vector from a predefined ort
+honormal basis and either add or subtract it to the target image. Despite its simplicity, the propos
+ed method can be used for both untargeted and targeted attacks -- resulting in previously unpreceden
+ted query efficiency in both settings. We demonstrate the efficacy and efficiency of our algorithm o
+n several real world settings including the Google Cloud Vision API. We argue that our proposed algo
+rithm should serve as a strong baseline for future black-box attacks, in particular because it is ex
+tremely fast and its implementation requires less than 20 lines of PyTorch code.
+
+27. are generative classifiers more robust to adversarial attacks?
+http://proceedings.mlr.press/v97/li19a.html
+被引数：2    icml2019
+Abstract
+There is a rising interest in studying the robustness of deep neural network classifiers against adv
+ersaries, with both advanced attack and defence techniques being actively developed. However, most r
+ecent work focuses on discriminative classifiers which only models the conditional distribution of t
+he labels given the inputs. In this abstract we propose deep Bayes classifier that improves the clas
+sical naive Bayes with conditional deep generative models, and verifies its robustness against a num
+ber of existing attacks. We further developed a detection method for adversarial examples based on c
+onditional deep generative models. Our initial results on MNIST suggest that deep Bayes classifiers 
+might be more robust when compared with deep discriminative classifiers, and the proposed detection 
+method achieves high detection rates against two commonly used attacks.
+
+28. adversarial attacks on node embeddings via graph poisoning.
+http://proceedings.mlr.press/v97/bojchevski19a.html
+被引数：2    icml2019
+Abstract
+The goal of network representation learning is to learn low-dimensional node embeddings that capture
+ the graph structure and are useful for solving downstream tasks. However, despite the proliferation
+ of such methods, there is currently no study of their robustness to adversarial attacks. We provide
+ the first adversarial vulnerability analysis on the widely used family of methods based on random w
+alks. We derive efficient adversarial perturbations that poison the network structure and have a neg
+ative effect on both the quality of the embeddings and the downstream tasks. We further show that ou
+r attacks are transferable since they generalize to many models and are successful even when the att
+acker is restricted.
+  
+
+29. connecting the digital and physical world: improving the robustness of adversarial attacks.
+https://aaai.org/ojs/index.php/AAAI/article/view/3926
+被引数：1    aaai2019
+Abstract
+can force a classifier to make targeted mistakes. So far, most existing works focus on crafting adve
+rsarial examples in the digital domain, while limited efforts have been devoted to understanding the
+ physical domain attacks. In this work, we explore the feasibility of generating robust adversarial 
+examples that remain effective in the physical domain. Our core idea is to use an image-to-image tra
+nslation network to simulate the digital-to-physical transformation process for generating robust ad
+versarial examples. To validate our method, we conduct a large-scale physical-domain experiment, whi
+ch involves manually taking more than 3000 physical domain photos. The results show that our method 
+outperforms existing ones by a large margin and demonstrates a high level of robustness and transfer
+ability.
+
+30. transferable adversarial attacks for image and video object detection.
+https://doi.org/10.24963/ijcai.2019/134
+被引数：1    ijcai2019
+Abstract
+Adversarial examples have been demonstrated to threaten many computer vision tasks including object 
+detection. However, the existing attacking methods for object detection have two limitations: poor t
+ransferability, which denotes that the generated adversarial examples have low success rate to attac
+k other kinds of detection methods, and high computation cost, which means that they need more time 
+to generate an adversarial image, and therefore are difficult to deal with the video data. To addres
+s these issues, we utilize a generative mechanism to obtain the adversarial image and video. In this
+ way, the processing time is reduced. To enhance the transferability, we destroy the feature maps ex
+tracted from the feature network, which usually constitutes the basis of object detectors. The propo
+sed method is based on the Generative Adversarial Network (GAN) framework, where we combine the high
+-level class loss and low-level feature loss to jointly train the adversarial example generator. A s
+eries of experiments conducted on PASCAL VOC and ImageNet VID datasets show that our method can effi
+ciently generate image and video adversarial examples, and more importantly, these adversarial examp
+les have better transferability, and thus, are able to simultaneously attack two kinds of representa
+tive object detection models: proposal based models like Faster-RCNN, and regression based models li
+ke SSD.
+
+31. adversarial regression for detecting attacks in cyber-physical systems.
+https://doi.org/10.24963/ijcai.2018/524
+被引数：1    ijcai2018
+Abstract
+[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]
+
+32. adversarial camera stickers: a physical camera-based attack on deep learning systems.
+http://proceedings.mlr.press/v97/li19j.html
+被引数：1    icml2019
+Abstract
+Recent work has documented the susceptibility of deep learning systems to adversarial examples, but 
+most such attacks directly manipulate the digital input to a classifier. Although a smaller line of 
+work considers physical adversarial attacks, in all cases these involve manipulating the object of i
+nterest, e.g., putting a physical sticker on an object to misclassify it, or manufacturing an object
+ specifically intended to be misclassified. In this work, we consider an alternative question: is it
+ possible to fool deep classifiers, over all perceived objects of a certain type, by physically mani
+pulating the camera itself? We show that by placing a carefully crafted and mainly-translucent stick
+er over the lens of a camera, one can create universal perturbations of the observed images that are
+ inconspicuous, yet misclassify target objects as a different (targeted) class. To accomplish this, 
+we propose an iterative procedure for both updating the attack perturbation (to make it adversarial 
+for a given classifier), and the threat model itself (to ensure it is physically realizable). For ex
+ample, we show that we can achieve physically-realizable attacks that fool ImageNet classifiers in a
+ targeted fashion 49.6% of the time. This presents a new class of physically-realizable threat model
+s to consider in the context of adversarially robust machine learning. Our demo video can be viewed 
+at: https://youtu.be/wUVmL33Fx54
+  
+
+33. real-time adversarial attacks.
+https://doi.org/10.24963/ijcai.2019/649
+被引数：1    ijcai2019
+Abstract
+In recent years, many efforts have demonstrated that modern machine learning algorithms are vulnerab
+le to adversarial attacks, where small, but carefully crafted, perturbations on the input can make t
+hem fail. While these attack methods are very effective, they only focus on scenarios where the targ
+et model takes static input, i.e., an attacker can observe the entire original sample and then add a
+ perturbation at any point of the sample. These attack approaches are not applicable to situations w
+here the target model takes streaming input, i.e., an attacker is only able to observe past data poi
+nts and add perturbations to the remaining (unobserved) data points of the input. In this paper, we 
+propose a real-time adversarial attack scheme for machine learning models with streaming inputs.
+
+34. trust region based adversarial attack on neural networks
+http://openaccess.thecvf.com/content_CVPR_2019/html/Yao_Trust_Region_Based_Adversarial_Attack_on_Neural_Networks_CVPR_2019_paper.html
+被引数：1    cvpr2019
+Abstract
+Deep Neural Networks are quite vulnerable to adversarial perturbations. Current state-of-the-art adv
+ersarial attack methods typically require very time consuming hyper-parameter tuning, or require man
+y iterations to solve an optimization based adversarial attack. To address this problem, we present 
+a new family of trust region based adversarial attacks, with the goal of computing adversarial pertu
+rbations efficiently. We propose several attacks based on variants of the trust region optimization 
+method. We test the proposed methods on Cifar-10 and ImageNet datasets using several different model
+s including AlexNet, ResNet-50, VGG-16, and DenseNet-121 models. Our methods achieve comparable resu
+lts with the Carlini-Wagner (CW) attack, but with significant speed up of up to $37\times$, for the 
+VGG-16 model on a Titan Xp GPU. For the case of ResNet-50 on ImageNet, we can bring down its classif
+ication accuracy to less than 0.1\% with at most $1.5\%$ relative $L_\infty$ (or $L_2$) perturbation
+ requiring only $1.02$ seconds as compared to $27.04$ seconds for the CW attack. We have open source
+d our method which can be accessed at [1].
+
+35. parsimonious black-box adversarial attacks via efficient combinatorial optimization.
+http://proceedings.mlr.press/v97/moon19a.html
+被引数：1    icml2019
+Abstract
+Solving for adversarial examples with projected gradient descent has been demonstrated to be highly 
+effective in fooling the neural network based classifiers. However, in the black-box setting, the at
+tacker is limited only to the query access to the network and solving for a successful adversarial e
+xample becomes much more difficult. To this end, recent methods aim at estimating the true gradient 
+signal based on the input queries but at the cost of excessive queries. We propose an efficient disc
+rete surrogate to the optimization problem which does not require estimating the gradient and conseq
+uently becomes free of the first order update hyperparameters to tune. Our experiments on Cifar-10 a
+nd ImageNet show the state of the art black-box attack performance with significant reduction in the
+ required queries compared to a number of recently proposed methods. The source code is available at
+ this https URL.
+
+36. when deep fool meets deep prior: adversarial attack on super-resolution network.
+https://doi.org/10.1145/3240508.3240603
+被引数：1    mm2018
+Abstract
+This paper investigates the vulnerability of the deep prior used in deep learning based image restor
+ation. In particular, the image super-resolution, which relies on the strong prior information to re
+gularize the solution space and plays important roles in the image pre-processing for future viewing
+ and analysis, is shown to be vulnerable to the well-designed adversarial examples. We formulate the
+ adversarial example generation process as an optimization problem, and given super-resolution model
+ three different types of attack are designed based on the subsequent tasks: (i) style transfer atta
+ck; (ii) classification attack; (iii) caption attack. Another interesting property of our design is 
+that the attack is hidden behind the super-resolution process, such that the utilization of low reso
+lution images is not significantly influenced. We show that the vulnerability to adversarial example
+s could bring risks to the pre-processing modules such as super-resolution deep neural network, whic
+h is also of paramount significance for the security of the whole system. Our results also shed ligh
+t on the potential security issues of the pre-processing modules, and raise concerns regarding the c
+orresponding countermeasures for adversarial examples.
+
+37. efficient decision-based black-box adversarial attacks on face recognition
+http://openaccess.thecvf.com/content_CVPR_2019/html/Dong_Efficient_Decision-Based_Black-Box_Adversarial_Attacks_on_Face_Recognition_CVPR_2019_paper.html
+被引数：1    cvpr2019
+Abstract
+Face recognition has obtained remarkable progress in recent years due to the great improvement of de
+ep convolutional neural networks (CNNs). However, deep CNNs are vulnerable to adversarial examples, 
+which can cause fateful consequences in real-world face recognition applications with security-sensi
+tive purposes. Adversarial attacks are widely studied as they can identify the vulnerability of the 
+models before they are deployed. In this paper, we evaluate the robustness of state-of-the-art face 
+recognition models in the decision-based black-box attack setting, where the attackers have no acces
+s to the model parameters and gradients, but can only acquire hard-label predictions by sending quer
+ies to the target model. This attack setting is more practical in real-world face recognition system
+s. To improve the efficiency of previous methods, we propose an evolutionary attack algorithm, which
+ can model the local geometries of the search directions and reduce the dimension of the search spac
+e. Extensive experiments demonstrate the effectiveness of the proposed method that induces a minimum
+ perturbation to an input face image with fewer queries. We also apply the proposed method to attack
+ a real-world face recognition system successfully.
+
+38. the adversarial attack and detection under the fisher information metric.
+https://aaai.org/ojs/index.php/AAAI/article/view/4536
+被引数：1    aaai2019
+Abstract
+Many deep learning models are vulnerable to the adversarial attack, i.e., imperceptible but intentio
+nally-designed perturbations to the input can cause incorrect output of the networks. In this paper,
+ using information geometry, we provide a reasonable explanation for the vulnerability of deep learn
+ing models. By considering the data space as a non-linear space with the Fisher information metric i
+nduced from a neural network, we first propose an adversarial attack algorithm termed one-step spect
+ral attack (OSSA). The method is described by a constrained quadratic form of the Fisher information
+ matrix, where the optimal adversarial perturbation is given by the first eigenvector, and the model
+ vulnerability is reflected by the eigenvalues. The larger an eigenvalue is, the more vulnerable the
+ model is to be attacked by the corresponding eigenvector. Taking advantage of the property, we also
+ propose an adversarial detection method with the eigenvalues serving as characteristics. Both our a
+ttack and detection algorithms are numerically optimized to work efficiently on large datasets. Our 
+evaluations show superior performance compared with other methods, implying that the Fisher informat
+ion is a promising approach to investigate the adversarial attacks and defenses.
+
+39. adversarial examples for graph data: deep insights into attack and defense.
+https://doi.org/10.24963/ijcai.2019/669
+被引数：0    ijcai2019
+Abstract
+Graph deep learning models, such as graph convolutional networks (GCN) achieve state-of-the-art perf
+ormance for tasks on graph data. However, similar to other deep learning models, graph deep learning
+ models are susceptible to adversarial attacks. However, compared with non-graph data the discrete n
+ature of the graph connections and features provide unique challenges and opportunities for adversar
+ial attacks and defenses.  In this paper, we propose techniques for both an adversarial attack and a
+ defense against adversarial attacks. Firstly, we show that the problem of discrete graph connection
+s and the discrete features of common datasets can be handled by using the integrated gradient techn
+ique that accurately determines the effect of changing selected features or edges while still benefi
+ting from parallel computations. In addition, we show that an adversarially manipulated graph using 
+a targeted attack statistically differs from un-manipulated graphs. Based on this observation, we pr
+opose a defense approach which can detect and recover a potential adversarial perturbation. Our expe
+riments on a number of datasets show the effectiveness of the proposed techniques.
+		    
+
+40. on certifying non-uniform bounds against adversarial attacks.
+http://proceedings.mlr.press/v97/liu19h.html
+被引数：0    icml2019
+Abstract
+This work studies the robustness certification problem of neural network models, which aims to find 
+certified adversary-free regions as large as possible around data points. In contrast to the existin
+g approaches that seek regions bounded uniformly along all input features, we consider non-uniform b
+ounds and use it to study the decision boundary of neural network models. We formulate our target as
+ an optimization problem with nonlinear constraints. Then, a framework applicable for general feedfo
+rward neural networks is proposed to bound the output logits so that the relaxed problem can be solv
+ed by the augmented Lagrangian method. Our experiments show the non-uniform bounds have larger volum
+es than uniform ones. Compared with normal models, the robust models have even larger non-uniform bo
+unds and better interpretability. Further, the geometric similarity of the non-uniform bounds gives 
+a quantitative, data-agnostic metric of input features’ robustness.
+  
+
+41. structured adversarial attack: towards general implementation and better interpretability.
+https://openreview.net/forum?id=BkgzniCqY7
+被引数：0    iclr2019
+Abstract
+When generating adversarial examples to attack deep neural networks (DNNs), Lp norm of the added per
+turbation is usually used to measure the similarity between original image and adversarial example. 
+However, such adversarial attacks perturbing the raw input spaces may fail to capture structural inf
+ormation hidden in the input.   This work develops a more general attack model,  i.e., the structure
+d attack (StrAttack),  which explores group sparsity in adversarial perturbation by sliding a mask t
+hrough images aiming for extracting key spatial structures.  An ADMM (alternating direction method o
+f multipliers)-based framework is proposed that can split the original problem into a sequence of an
+alytically solvable subproblems and can be generalized to implement other attacking methods. Strong 
+group sparsity is achieved in adversarial perturbations even with the same level of Lp-norm distorti
+on (p∈ {1,2,∞}) as the state-of-the-art attacks. We demonstrate the effectiveness of StrAttack by ex
+tensive experimental results on MNIST, CIFAR-10 and ImageNet. We also show that StrAttack provides b
+etter interpretability (i.e., better correspondence with discriminative image regions) through adver
+sarial saliency map (Paper-not et al., 2016b) and class activation map (Zhou et al., 2016).
+
+42. tactics of adversarial attack on deep reinforcement learning agents.
+https://doi.org/10.24963/ijcai.2017/525
+被引数：0    ijcai2017
+Abstract
+We introduce two tactics, namely the strategically-timed attack and the enchanting attack, to attack
+ reinforcement learning agents trained by deep reinforcement learning algorithms using adversarial e
+xamples. In the strategically-timed attack, the adversary aims at minimizing the agent's reward by o
+nly attacking the agent at a small subset of time steps in an episode. Limiting the attack activity 
+to this subset helps prevent detection of the attack by the agent. We propose a novel method to dete
+rmine when an adversarial example should be crafted and applied. In the enchanting attack, the adver
+sary aims at luring the agent to a designated target state. This is achieved by combining a generati
+ve model and a planning algorithm: while the generative model predicts the future states, the planni
+ng algorithm generates a preferred sequence of actions for luring the agent. A sequence of adversari
+al examples is then crafted to lure the agent to take the preferred sequence of actions. We apply th
+e proposed tactics to the agents trained by the state-of-the-art deep reinforcement learning algorit
+hm including DQN and A3C. In 5 Atari games, our strategically-timed attack reduces as much reward as
+ the uniform attack (i.e., attacking at every time step) does by attacking the agent 4 times less of
+ten. Our enchanting attack lures the agent toward designated target states with a more than 70% succ
+ess rate. Example videos are available at http://yclin.me/adversarial_attack_RL/.
+		    
+
+43. catastrophic child's play: easy to perform, hard to defend adversarial attacks
+http://openaccess.thecvf.com/content_CVPR_2019/html/Ho_Catastrophic_Childs_Play_Easy_to_Perform_Hard_to_Defend_Adversarial_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+The problem of adversarial CNN attacks is considered, with an emphasis on attacks that are trivial t
+o perform but difficult to defend. A framework for the study of such attacks is proposed, using real
+ world object manipulations. Unlike most works in the past, this framework supports the design of at
+tacks based on both small and large image perturbations, implemented by camera shake and pose variat
+ion. A setup is proposed for the collection of such perturbations and determination of their percept
+ibility. It is argued that perceptibility depends on context, and a distinction is made between impe
+rceptible and semantically imperceptible perturbations. While the former survives image comparisons,
+ the latter are perceptible but have no impact on human object recognition. A procedure is proposed 
+to determine the perceptibility of perturbations using Turk experiments, and a dataset of both pertu
+rbation classes which enables replicable studies of object manipulation attacks, is assembled. Exper
+iments using defenses based on many datasets, CNN models, and algorithms from the literature elucida
+te the difficulty of defending these attacks -- in fact, none of the existing defenses is found effe
+ctive against them. Better results are achieved with real world data augmentation, but even this is 
+not foolproof. These results confirm the hypothesis that current CNNs are vulnerable to attacks impl
+ementable even by a child, and that such attacks may prove difficult to defend.
+
+44. on the robustness of semantic segmentation models to adversarial attacks
+http://openaccess.thecvf.com/content_cvpr_2018/html/Arnab_On_the_Robustness_CVPR_2018_paper.html
+被引数：0    cvpr2018
+Abstract
+Deep Neural Networks (DNNs) have been demonstrated to perform exceptionally well on most recognition
+ tasks such as image classification and segmentation. However, they have also been shown to be vulne
+rable to adversarial examples. This phenomenon has recently attracted a lot of attention but it has 
+not been extensively studied on multiple, large-scale datasets and complex tasks such as semantic se
+gmentation which often require more specialised networks with additional components such as CRFs, di
+lated convolutions, skip-connections and multiscale processing. In this paper, we present what to ou
+r knowledge is the first rigorous evaluation of adversarial attacks on modern semantic segmentation 
+models, using two large-scale datasets. We analyse the effect of different network architectures, mo
+del capacity and multiscale processing, and show that many observations made on the task of classifi
+cation do not always transfer to this more complex task. Furthermore, we show how mean-field inferen
+ce in deep structured models and multiscale processing naturally implement recently proposed adversa
+rial defenses. Our observations will aid future efforts in understanding and defending against adver
+sarial examples. Moreover, in the shorter term, we show which segmentation models should currently b
+e preferred in safety-critical applications due to their inherent robustness.
+
+45. boosting adversarial attacks with momentum
+http://openaccess.thecvf.com/content_cvpr_2018/html/Dong_Boosting_Adversarial_Attacks_CVPR_2018_paper.html
+被引数：0    cvpr2018
+Abstract
+Deep neural networks are vulnerable to adversarial examples, which poses security concerns on these 
+algorithms due to the potentially severe consequences. Adversarial attacks serve as an important sur
+rogate to evaluate the robustness of deep learning models before they are deployed. However, most of
+ existing adversarial attacks can only fool a black-box model with a low success rate. To address th
+is issue, we propose a broad class of momentum-based iterative  algorithms to boost adversarial atta
+cks. By integrating the momentum term into the iterative process for attacks, our methods can stabil
+ize update directions and escape from poor local maxima during the iterations, resulting in more tra
+nsferable adversarial examples. To further improve the success rates for black-box attacks, we apply
+ momentum iterative algorithms to an ensemble of models, and show that the adversarially trained mod
+els with a strong defense ability are also vulnerable to our black-box attacks. We hope that the pro
+posed methods will serve as a benchmark for evaluating the robustness of various deep models and def
+ense methods. With this method, we won the first places in NIPS 2017 Non-targeted Adversarial Attack
+ and Targeted Adversarial Attack competitions.
+
+46. deflecting adversarial attacks with pixel deflection
+http://openaccess.thecvf.com/content_cvpr_2018/html/Prakash_Deflecting_Adversarial_Attacks_CVPR_2018_paper.html
+被引数：0    cvpr2018
+Abstract
+CNNs are poised to become integral parts of many critical systems. Despite their robustness to natur
+al variations, image pixel values can be manipulated, via small, carefully crafted, imperceptible pe
+rturbations, to cause a model to misclassify images. We present an algorithm to process an image so 
+that classification accuracy is significantly preserved in the presence of such adversarial manipula
+tions. Image classifiers tend to be robust to natural noise, and adversarial attacks tend to be agno
+stic to object location. These observations motivate our strategy, which leverages model robustness 
+to defend against adversarial perturbations by forcing the image to match natural image statistics. 
+Our algorithm locally corrupts the image by redistributing pixel values via a process we term pixel 
+deflection. A subsequent wavelet-based denoising operation softens this corruption, as well as some 
+of the adversarial changes. We demonstrate experimentally that the combination of these techniques e
+nables the effective recovery of the true class, against a variety of robust attacks. Our results co
+mpare favorably with current state-of-the-art defenses, without requiring retraining or modifying th
+e CNN.
+
+47. improving dnn robustness to adversarial attacks using jacobian regularization.
+https://doi.org/10.1007/978-3-030-01258-8_32
+被引数：0    eccv2018
+Abstract
+Deep neural networks have lately shown tremendous performance in various applications including visi
+on and speech processing tasks. However, alongside their ability to perform these tasks with such hi
+gh accuracy, it has been shown that they are highly susceptible to adversarial attacks: a small chan
+ge of the input would cause the network to err with high confidence. This phenomenon exposes an inhe
+rent fault in these networks and their ability to generalize well. For this reason, providing robust
+ness to adversarial attacks is an important challenge in networks training, which has led to an exte
+nsive research. In this work, we suggest a theoretically inspired novel approach to improve the netw
+orks' robustness. Our method applies regularization using the Frobenius norm of the Jacobian of the 
+network, which is applied as post-processing, after regular training has finished. We demonstrate em
+pirically that it leads to enhanced robustness results with a minimal change in the original network
+'s accuracy.
+
+48. robust detection of adversarial attacks by modeling the intrinsic properties of deep neural networks.
+http://papers.nips.cc/paper/8016-robust-detection-of-adversarial-attacks-by-modeling-the-intrinsic-properties-of-deep-neural-networks
+被引数：0    nips2018
+Abstract
+It has been shown that deep neural network (DNN) based classifiers are vulnerable to human-impercept
+ive adversarial perturbations which can cause DNN classifiers to output wrong predictions with high 
+confidence. We propose an unsupervised learning approach to detect adversarial inputs without any kn
+owledge of attackers. Our approach tries to capture the intrinsic properties of a DNN classifier and
+ uses them to detect adversarial inputs. The intrinsic properties used in this study are the output 
+distributions of the hidden neurons in a DNN classifier presented with natural images. Our approach 
+can be easily applied to any DNN classifiers or combined with other defense strategy to improve robu
+stness. Experimental results show that our approach demonstrates state-of-the-art robustness in defe
+nding black-box and gray-box attacks.
+
+49. adversarial attacks on stochastic bandits.
+http://papers.nips.cc/paper/7622-adversarial-attacks-on-stochastic-bandits
+被引数：0    nips2018
+Abstract
+We study adversarial attacks that manipulate the reward signals to control the actions chosen by a s
+tochastic multi-armed bandit algorithm.  We propose the first attack against two popular bandit algo
+rithms: $\epsilon$-greedy and UCB, \emph{without} knowledge of the mean rewards.  The attacker is ab
+le to spend only logarithmic effort, multiplied by a problem-specific parameter that becomes smaller
+ as the bandit problem gets easier to attack.  The result means the attacker can easily hijack the b
+ehavior of the bandit algorithm to promote or obstruct certain actions, say, a particular medical tr
+eatment.  As bandits are seeing increasingly wide use in practice, our study exposes a significant s
+ecurity threat.
+
+50. attacks meet interpretability: attribute-steered detection of adversarial samples.
+http://papers.nips.cc/paper/7998-attacks-meet-interpretability-attribute-steered-detection-of-adversarial-samples
+被引数：0    nips2018
+Abstract
+Adversarial sample attacks perturb benign inputs to induce DNN misbehaviors. Recent research has dem
+onstrated the widespread presence and the devastating consequences of such attacks. Existing defense
+ techniques either assume prior knowledge of specific attacks or may not work well on complex models
+ due to their underlying assumptions. We argue that adversarial sample attacks are deeply entangled 
+with interpretability of DNN models: while classification results on benign inputs can be reasoned b
+ased on the human perceptible features/attributes, results on adversarial samples can hardly be expl
+ained. Therefore, we propose a novel adversarial sample detection technique for face recognition mod
+els, based on interpretability. It features a novel bi-directional correspondence inference between 
+attributes and internal neurons to identify neurons critical for individual attributes. The activati
+on values of critical neurons are enhanced to amplify the reasoning part of the computation and the 
+values of other neurons are weakened to suppress the uninterpretable part. The classification result
+s after such transformation are compared with those of the original model to detect adversaries. Res
+ults show that our technique can achieve 94% detection accuracy for 7 different kinds of attacks wit
+h 9.91% false positives on benign inputs. In contrast, a state-of-the-art feature squeezing techniqu
+e can only achieve 55% accuracy with 23.3% false positives.
+
+51. adversarial risk and the dangers of evaluating against weak attacks.
+http://proceedings.mlr.press/v80/uesato18a.html
+被引数：0    icml2018
+Abstract
+, and develop tools and heuristics for identifying obscured models and designing transparent models.
+ We demonstrate that this is a significant problem in practice by repurposing gradient-free optimiza
+tion techniques into adversarial attacks, which we use to decrease the accuracy of several recently 
+proposed defenses to near zero. Our hope is that our formulations and results will help researchers 
+to develop more powerful defenses.
+  
+
+52. black-box adversarial attacks with limited queries and information.
+http://proceedings.mlr.press/v80/ilyas18a.html
+被引数：0    icml2018
+Abstract
+Current neural network-based classifiers are susceptible to adversarial examples even in the black-b
+ox setting, where the attacker only has query access to the model. In practice, the threat model for
+ real-world systems is often more restrictive than the typical black-box model where the adversary c
+an observe the full output of the network on arbitrarily many chosen inputs. We define three realist
+ic threat models that more accurately characterize many real-world classifiers: the query-limited se
+tting, the partial-information setting, and the label-only setting. We develop new attacks that fool
+ classifiers under these more restrictive threat models, where previous methods would be impractical
+ or ineffective. We demonstrate that our methods are effective against an ImageNet classifier under 
+our proposed threat models. We also demonstrate a targeted black-box attack against a commercial cla
+ssifier, overcoming the challenges of limited query access, partial information, and other practical
+ issues to break the Google Cloud Vision API.
+  
+
+53. adversarial attack on graph structured data.
+http://proceedings.mlr.press/v80/dai18b.html
+被引数：0    icml2018
+Abstract
+Deep learning on graph structures has shown exciting results in various applications. However, few a
+ttentions have been paid to the robustness of such models, in contrast to numerous research work for
+ image or text adversarial attack and defense. In this paper, we focus on the adversarial attacks th
+at fool deep learning models by modifying the combinatorial structure of data. We first propose a re
+inforcement learning based attack method that learns the generalizable attack policy, while only req
+uiring prediction labels from the target classifier. We further propose attack methods based on gene
+tic algorithms and gradient descent in the scenario where additional prediction confidence or gradie
+nts are available. We use both synthetic and real-world data to show that, a family of Graph Neural 
+Network models are vulnerable to these attacks, in both graph-level and node-level classification ta
+sks. We also show such attacks can be used to diagnose the learned classifiers.
+  
+
+54. what does it mean to learn in deep networks? and, how does one detect adversarial attacks?
+http://openaccess.thecvf.com/content_CVPR_2019/html/Corneanu_What_Does_It_Mean_to_Learn_in_Deep_Networks_And_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+The flexibility and high-accuracy of Deep Neural Networks (DNNs) has transformed computer vision. Bu
+t, the fact that we do not know when a specific DNN will work and when it will fail has resulted in 
+a lack of trust. A clear example is self-driving cars; people are uncomfortable sitting in a car dri
+ven by algorithms that may fail under some unknown, unpredictable conditions. Interpretability and e
+xplainability approaches attempt to address this by uncovering what a DNN models, i.e., what each no
+de (cell) in the network represents and what images are most likely to activate it. This can be used
+ to generate, for example, adversarial attacks. But these approaches do not generally allow us to de
+termine where a DNN will succeed or fail and   why . i.e., does this learned representation   genera
+lize  to unseen samples? Here, we derive a novel approach to define what it means to learn in deep n
+etworks, and how to use this knowledge to detect adversarial attacks. We show how this defines the a
+bility of a network to generalize to unseen testing samples and, most importantly,   why  this is th
+e case.
+
+55. shieldnets: defending against adversarial attacks using probabilistic adversarial robustness
+http://openaccess.thecvf.com/content_CVPR_2019/html/Theagarajan_ShieldNets_Defending_Against_Adversarial_Attacks_Using_Probabilistic_Adversarial_Robustness_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+Defending adversarial attack is a critical step towards reliable deployment of deep learning empower
+ed solutions for industrial applications. Probabilistic adversarial robustness (PAR), as a theoretic
+al framework, is introduced to neutralize adversarial attacks by concentrating sample probability to
+ adversarial-free zones. Distinct to most of the existing defense mechanisms that require modifying 
+the architecture/training of the target classifier which is not feasible in the real-world scenario,
+ e.g., when a model has already been deployed, PAR is designed in the first place to provide proacti
+ve protection to an existing fixed model. ShieldNet is implemented as a demonstration of PAR in this
+ work by using PixelCNN. Experimental results show that this approach is generalizable, robust again
+st adversarial transferability and resistant to a wide variety of attacks on the Fashion-MNIST and C
+IFAR10 datasets, respectively.
+
+56. rob-gan: generator, discriminator, and adversarial attacker
+http://openaccess.thecvf.com/content_CVPR_2019/html/Liu_Rob-GAN_Generator_Discriminator_and_Adversarial_Attacker_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+We study two important concepts in adversarial deep learning---adversarial training and generative a
+dversarial network (GAN).  Adversarial training is the technique used to improve the robustness of d
+iscriminator by combining adversarial attacker and discriminator in the training phase.  GAN is comm
+only used for image generation by jointly optimizing discriminator and generator. We show these two 
+concepts are indeed closely related and can be used to strengthen each other---adding a generator to
+ the adversarial training procedure can improve the robustness of discriminators, and adding an adve
+rsarial attack to GAN training can improve the convergence speed and lead to better generators. Comb
+ining these two insights, we develop a framework called Rob-GAN to jointly optimize generator and di
+scriminator in the presence of adversarial attacks---the generator generates fake images to fool dis
+criminator; the adversarial attacker perturbs real images to fool discriminator, and the discriminat
+or wants to minimize loss under fake and adversarial images. Through this end-to-end training proced
+ure, we are able to simultaneously improve the convergence speed of GAN training, the quality of syn
+thetic images, and the robustness of discriminator under strong adversarial attacks. Experimental re
+sults demonstrate that the obtained classifier is more robust than the state-of-the-art adversarial 
+training approach (Madry 2017), and the generator outperforms SN-GAN on ImageNet-143.
+
+57. evading defenses to transferable adversarial examples by translation-invariant attacks
+http://openaccess.thecvf.com/content_CVPR_2019/html/Dong_Evading_Defenses_to_Transferable_Adversarial_Examples_by_Translation-Invariant_Attacks_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+Deep neural networks are vulnerable to adversarial examples, which can mislead classifiers by adding
+ imperceptible perturbations. An intriguing property of adversarial examples is their good transfera
+bility, making black-box attacks feasible in real-world applications. Due to the threat of adversari
+al attacks, many methods have been proposed to improve the robustness. Several state-of-the-art defe
+nses are shown to be robust against transferable adversarial examples. In this paper, we propose a t
+ranslation-invariant attack method to generate more transferable adversarial examples against the de
+fense models. By optimizing a perturbation over an ensemble of translated images, the generated adve
+rsarial example is less sensitive to the white-box model being attacked and has better transferabili
+ty. To improve the efficiency of attacks, we further show that our method can be implemented by conv
+olving the gradient at the untranslated image with a pre-defined kernel. Our method is generally app
+licable to any gradient-based attack method. Extensive experiments on the ImageNet dataset validate 
+the effectiveness of the proposed method. Our best attack fools eight state-of-the-art defenses at a
+n 82% success rate on average based only on the transferability, demonstrating the insecurity of the
+ current defense techniques.
+
+58. defending against adversarial attacks by randomized diversification
+http://openaccess.thecvf.com/content_CVPR_2019/html/Taran_Defending_Against_Adversarial_Attacks_by_Randomized_Diversification_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+The vulnerability of machine learning systems to adversarial attacks questions their usage in many a
+pplications. In this paper, we propose a randomized diversification as a defense strategy. We introd
+uce a multi-channel architecture in a gray-box scenario, which assumes that the architecture of the 
+classifier and the training data set are known to the attacker. The attacker does not only have acce
+ss to a secret key and to the internal states of the system at the test time. The defender processes
+ an input in multiple channels. Each channel introduces its own randomization in a special transform
+ domain based on a secret key shared between the training and testing stages. Such a transform based
+ randomization with a shared key preserves the gradients in key-defined sub-spaces for the defender 
+but it prevents gradient back propagation and the creation of various bypass systems for the attacke
+r. An additional benefit of multi-channel randomization is the aggregation that fuses soft-outputs f
+rom all channels, thus increasing the reliability of the final score. The sharing of a secret key cr
+eates an information advantage to the defender. Experimental evaluation demonstrates an increased ro
+bustness of the proposed method to a number of known state-of-the-art attacks.
+
+59. curls & whey: boosting black-box adversarial attacks
+http://openaccess.thecvf.com/content_CVPR_2019/html/Shi_Curls__Whey_Boosting_Black-Box_Adversarial_Attacks_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+Image classifiers based on deep neural networks suffer from harassment caused by adversarial example
+s. Two defects exist in black-box iterative attacks that generate adversarial examples by incrementa
+lly adjusting the noise-adding direction for each step. On the one hand, existing iterative attacks 
+add noises monotonically along the direction of gradient ascent, resulting in a lack of diversity an
+d adaptability of the generated iterative trajectories. On the other hand, it is trivial to perform 
+adversarial attack by adding excessive noises, but currently there is no refinement mechanism to squ
+eeze redundant noises. In this work, we propose Curls & Whey black-box attack to fix the above two d
+efects. During Curls iteration, by combining gradient ascent and descent, we `curl' up iterative tra
+jectories to integrate more diversity and transferability into adversarial examples. Curls iteration
+ also alleviates the diminishing marginal effect in existing iterative attacks. The Whey optimizatio
+n further squeezes the `whey' of noises by exploiting the robustness of adversarial perturbation. Ex
+tensive experiments on Imagenet and Tiny-Imagenet demonstrate that our approach achieves impressive 
+decrease on noise magnitude in l2 norm. Curls & Whey attack also shows promising transferability aga
+inst ensemble models as well as adversarially trained models. In addition, we extend our attack to t
+he targeted misclassification, effectively reducing the difficulty of targeted attacks under black-b
+ox condition.
+
+60. exact adversarial attack to image captioning via structured output learning with latent variables
+http://openaccess.thecvf.com/content_CVPR_2019/html/Xu_Exact_Adversarial_Attack_to_Image_Captioning_via_Structured_Output_Learning_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+In this work, we study the robustness of a CNN+RNN based image captioning system being subjected to 
+adversarial noises. We propose to fool an image captioning system to generate some targeted partial 
+captions for an image polluted by adversarial noises, even the targeted captions are totally irrelev
+ant to the image content. A partial caption indicates that the words at some locations in this capti
+on are observed, while words at other locations are not restricted. It is the first work to study ex
+act adversarial attacks of targeted partial captions. Due to the sequential dependencies among words
+ in a caption, we formulate the generation of adversarial noises for targeted partial captions as a 
+structured output learning problem with latent variables. Both the generalized expectation maximizat
+ion algorithm and structural SVMs with latent variables are then adopted to optimize the problem. Th
+e proposed methods generate very successful attacks to three popular CNN+RNN based image captioning 
+models. Furthermore, the proposed attack methods are used to understand the inner mechanism of image
+ captioning systems, providing the guidance to further improve automatic image captioning systems to
+wards human captioning.
+
+61. non-local context encoder: robust biomedical image segmentation against adversarial attacks.
+https://aaai.org/ojs/index.php/AAAI/article/view/4857
+被引数：0    aaai2019
+Abstract
+Recent progress in biomedical image segmentation based on deep convolutional neural networks (CNNs) 
+has drawn much attention. However, its vulnerability towards adversarial samples cannot be overlooke
+d. This paper is the first one that discovers that all the CNN-based state-of-the-art biomedical ima
+ge segmentation models are sensitive to adversarial perturbations. This limits the deployment of the
+se methods in safety-critical biomedical fields. In this paper, we discover that global spatial depe
+ndencies and global contextual information in a biomedical image can be exploited to defend against 
+adversarial attacks. To this end, non-local context encoder (NLCE) is proposed to model short- and l
+ong range spatial dependencies and encode global contexts for strengthening feature activations by c
+hannel-wise attention. The NLCE modules enhance the robustness and accuracy of the non-local context
+ encoding network (NLCEN), which learns robust enhanced pyramid feature representations with NLCE mo
+dules, and then integrates the information across different levels. Experiments on both lung and ski
+n lesion segmentation datasets have demonstrated that NLCEN outperforms any other state-of-the-art b
+iomedical image segmentation methods against adversarial attacks. In addition, NLCE modules can be a
+pplied to improve the robustness of other CNN-based biomedical image segmentation methods.
+
+62. multi-adversarial discriminative deep domain generalization for face presentation attack detection
+http://openaccess.thecvf.com/content_CVPR_2019/html/Shao_Multi-Adversarial_Discriminative_Deep_Domain_Generalization_for_Face_Presentation_Attack_Detection_CVPR_2019_paper.html
+被引数：0    cvpr2019
+Abstract
+Face presentation attacks have become an increasingly critical issue in the face recognition communi
+ty. Many face anti-spoofing methods have been proposed, but they cannot generalize well on "unseen" 
+attacks. This work focuses on improving the generalization ability of face anti-spoofing methods fro
+m the perspective of the domain generalization. We propose to learn a generalized feature space via 
+a novel multi-adversarial discriminative deep domain generalization framework. In this framework, a 
+multi-adversarial deep domain generalization is performed under a dual-force triplet-mining constrai
+nt. This ensures that the learned feature space is discriminative and shared by multiple source doma
+ins, and thus is more generalized to new face presentation attacks. An auxiliary face depth supervis
+ion is incorporated to further enhance the generalization ability. Extensive experiments on four pub
+lic datasets validate the effectiveness of the proposed method. 
+

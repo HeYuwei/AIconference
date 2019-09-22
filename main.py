@@ -14,7 +14,7 @@ if __name__ == '__main__':
     parser.add_argument('--with_tip', type=bool, default=False,
                         help='Note the keywords.')
 
-    parser.add_argument('--key_words_m', type=list, default=['attention'],
+    parser.add_argument('--key_words_m', type=list, default=['adversa','attack'],
                         help='The words must be contained ')
     parser.add_argument('--key_words_c', type=list, default=[],
                         help='At least one word should be contained ')

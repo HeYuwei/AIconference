@@ -36,8 +36,11 @@ def search(opt):
             line += '\n'
             line += item['abstract']
             line += '\n\n'
-            print(line)
-            f.write(line)
+            try:
+                print(line)
+                f.write(line)
+            except:
+                pass
 
 
     elif opt.show_order == 'time':
