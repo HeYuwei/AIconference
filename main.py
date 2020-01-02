@@ -21,7 +21,7 @@ if __name__ == '__main__':
     parser.add_argument('--key_words_r', type=list, default=[],
                         help='The words can not be contained ')
 
-    parser.add_argument('--detail_info', type=bool, default=True,
+    parser.add_argument('--search_in_abstract', type=bool, default= False,
                         help='whether to search in abstract')
 
     parser.add_argument('--refresh_info', type=bool, default=False,

@@ -496,7 +496,7 @@ def search_with_keywords(opt):
                 s_text = item['title']
 
                 with_detail_info = False
-                if opt.detail_info:
+                if opt.search_in_abstract:
                     supply_basic_info(item,conf,opt.refresh_info)
                     with_detail_info = True
                     s_text += item['abstract']
