@@ -13,7 +13,8 @@ rows = [
         {'name':'nips','parent':'nips','type':'conf','hold_time':'always'},
         {'name':'icme','parent':'icmcs','type':'conf','hold_time':'always'},
         {'name':'mm','parent':'mm','type':'conf','hold_time':'always'},
-        {'name':'alt','parent':'alt','type':'conf','hold_time':'always'}
+        {'name':'alt','parent':'alt','type':'conf','hold_time':'always'},
+        {'name':'tmi','parent':'tmi','type':'journals','hold_time':'always'}
     ]
 
 with open('conf_info.csv','w')as f:

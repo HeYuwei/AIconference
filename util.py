@@ -138,7 +138,7 @@ def get_titles(conf ,conf_info, c_time,with_a = False):
             soup = get_soup(url)
             v_info = soup.select('div#main > ul > li > a')[v_ind].text
             v_ind = re.split(r' |:', v_info)[1]
-            titles = one_page_titles(conf,conf_info, c_time, volume='')
+            titles = one_page_titles(conf,conf_info, v_ind, volume='')
 
         if len(titles) == 0:
             print(conf + c_time + ' does not exisit')

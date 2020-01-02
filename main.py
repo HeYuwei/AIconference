@@ -3,10 +3,10 @@ from util import ex_funtion, assert_info, init_conf_info
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, conflict_handler="resolve")
-    parser.add_argument('--conf_list', type = object , default=['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr','mm'],
-                        help='The conferences or journal to reserach.')
-    # parser.add_argument('--conf_list', type = object , default=['arxiv'],
+    # parser.add_argument('--conf_list', type = object , default=['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr','mm'],
     #                     help='The conferences or journal to reserach.')
+    parser.add_argument('--conf_list', type = object , default=['arxiv'],
+                        help='The conferences or journal to reserach.')
 
     parser.add_argument('--time_sec', type = object, default=['2016','2019'],
                         help= 'The time range to research')
@@ -14,7 +14,7 @@ if __name__ == '__main__':
     parser.add_argument('--with_tip', type=bool, default=False,
                         help='Note the keywords.')
 
-    parser.add_argument('--key_words_m', type=list, default=['adversa','attack'],
+    parser.add_argument('--key_words_m', type=list, default=['group','attention','graph'],
                         help='The words must be contained ')
     parser.add_argument('--key_words_c', type=list, default=[],
                         help='At least one word should be contained ')
