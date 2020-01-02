@@ -494,6 +494,13 @@ def search_with_keywords(opt):
             for item in items:
                 t_count += 1
                 s_text = item['title']
+
+                with_detail_info = False
+                if opt.detail_info:
+                    supply_basic_info(item,conf,opt.refresh_info)
+                    with_detail_info = True
+                    s_text += item['abstract']
+
                 if not with_keywords(s_text, keywords):
                     continue
 
@@ -501,7 +508,7 @@ def search_with_keywords(opt):
                 c_count += 1
 
                 p_title = item['title']
-                if opt.with_tip:
+                if not with_detail_info:
                     p_title = addTips(p_title,keywords)
 
                 print(str(c_count) + '. ' + p_title)

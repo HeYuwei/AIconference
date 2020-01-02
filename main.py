@@ -22,7 +22,7 @@ if __name__ == '__main__':
                         help='The words can not be contained ')
 
     parser.add_argument('--detail_info', type=bool, default=True,
-                        help='whether to search detailed info')
+                        help='whether to search in abstract')
 
     parser.add_argument('--refresh_info', type=bool, default=False,
                         help='Refresh local info ')
