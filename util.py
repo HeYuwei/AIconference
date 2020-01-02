@@ -496,7 +496,7 @@ def search_with_keywords(opt):
                 s_text = item['title']
 
                 with_detail_info = False
-                if opt.search_in_abstract:
+                if opt.detail_info:
                     supply_basic_info(item,conf,opt.refresh_info)
                     with_detail_info = True
                     s_text += item['abstract']
@@ -508,14 +508,14 @@ def search_with_keywords(opt):
                 c_count += 1
 
                 p_title = item['title']
-                if not with_detail_info:
+                if opt.with_tip:
                     p_title = addTips(p_title,keywords)
 
                 print(str(c_count) + '. ' + p_title)
                 print(item['url'])
                 print('')
 
-                if opt.detail_info:
+                if not with_detail_info:
                     supply_basic_info(item,conf,opt.refresh_info)
 
                 selected_items.append(item)
