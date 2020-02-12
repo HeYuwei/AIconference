@@ -1,15 +1,19 @@
-from util import search_with_keywords,gen_save_name
+from util import search_with_keywords, search_with_keywords_parallel, gen_save_name
+# import util
 import numpy as np
+import time
 
 
 def search(opt):
+    start_time = time.time()
+    # select_items = search_with_keywords_parallel(opt)
     select_items = search_with_keywords(opt)
 
     if len(select_items) == 0:
         print('There is no paper.')
         return ;
 
-    if not opt.detail_info:
+    if not opt.supply_detail_info:
         print('There is no detailed info to show.')
         return ;
 
@@ -42,7 +46,6 @@ def search(opt):
             except:
                 pass
 
-
     elif opt.show_order == 'time':
 
         item = select_items[0]
@@ -74,3 +77,5 @@ def search(opt):
             f.write(line)
 
     f.close()
+
+    print('The progaram costs ', (time.time() - start_time)/60, 'm')
