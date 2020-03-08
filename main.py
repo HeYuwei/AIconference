@@ -5,19 +5,19 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, conflict_handler="resolve")
     # parser.add_argument('--conf_list', type = object , default=['cvpr','iccv','eccv','aaai','ijcai','nips','icml','iclr','mm'],
     #                     help='The conferences or journal to reserach.')
-    parser.add_argument('--conf_list', type = object , default=['arxiv'],
-                        help='The conferences or journal to reserach.')
-
-    # parser.add_argument('--conf_list', type = object , default=['cvpr'],
+    # parser.add_argument('--conf_list', type = object , default=['arxiv'],
     #                     help='The conferences or journal to reserach.')
+
+    parser.add_argument('--conf_list', type = object , default=['mm'],
+                        help='The conferences or journal to reserach.')
     #
-    parser.add_argument('--time_sec', type = object, default=['201601','202002'],
+    parser.add_argument('--time_sec', type = object, default=['2016','2020'],
                         help= 'The time range to research')
 
     parser.add_argument('--with_tip', type=bool, default=False,
                         help='Note the keywords.')
 
-    parser.add_argument('--key_words_m', type=list, default=['nois'],
+    parser.add_argument('--key_words_m', type=list, default=[''],
                         help='The words must be contained ')
     parser.add_argument('--key_words_c', type=list, default=[],
                         help='At least one word should be contained ')

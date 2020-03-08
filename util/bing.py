@@ -109,6 +109,8 @@ def supply_basic_info(item,conf,refresh_info):
     if not(has_abstract and has_cite):
         if conf == 'arxiv':
             get_semantic_info(item)
+        else:
+            get_bing_info(item, has_abstract, has_cite)
 
     return item
 

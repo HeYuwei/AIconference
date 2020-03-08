@@ -321,7 +321,9 @@ def minDistance(str1, str2):
     return matrix[len(str1)][len(str2)]
 
 def cache_info(items,conf,c_time):
-    assert len(items) > 0
+    if len(items) == 0:
+        return
+    # assert len(items) > 0
     items = list(filter(lambda x: x['conf'] == conf and x['time'] == c_time, items))
     suffix = ''
     fname = 'papers/' + conf + '/' + c_time + suffix + '.json'

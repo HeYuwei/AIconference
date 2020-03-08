@@ -32,6 +32,7 @@ def search_with_keywords(opt):
 
         return (1, item)
 
+    n_time_list = []
     for c_time in time_list:
         year_selected_count = 0
         year_total_count = 0
@@ -88,17 +89,23 @@ def search_with_keywords(opt):
 
             cache_info(items, conf, c_time)
 
-        year_selected_count_list.append(year_selected_count)
+        if year_total_count == 0:
+            continue
+
+        n_time_list.append(c_time)
+
         year_total_count_list.append(year_total_count)
+        year_selected_count_list.append(year_selected_count)
 
     paper_count = sum(year_selected_count_list)
     print('paper count ' + str(paper_count))
     if paper_count == 0:
         return []
 
-    x = list(range(len(time_list)))
 
-    plt.xticks(x, time_list)
+    x = list(range(len(n_time_list)))
+
+    plt.xticks(x, n_time_list)
     x_label = ''
     for word in keywords['m']:
         x_label += word + ' '
