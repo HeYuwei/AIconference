@@ -1,7 +1,9 @@
 from .basic import *
 from .bing import supply_basic_info
+from .medhub import get_medhub_info
+import datetime
 
-
+cur_year = datetime.datetime.now().year
 
 def search_with_keywords(opt):
     keywords = opt.keywords
@@ -373,7 +375,6 @@ def get_titles(conf ,conf_info, c_time):
     if not os.path.exists('papers/' + conf):
         os.mkdir('papers/' + conf)
 
-
     if (conf_info[conf]['hold_time'] == 'single' and int(c_time) % 2 == 0) or (conf_info[conf]['hold_time'] == 'double' and int(c_time) % 2 == 1):
         print(conf + ' is not hold in ' + c_time)
         return []
@@ -388,7 +389,29 @@ def get_titles(conf ,conf_info, c_time):
         with open(fname,'r',encoding='utf-8') as f:
             data = json.load(f)
             return list(data.values())
-    else:
+
+    elif conf_info[conf]['database'] == 'medhub':
+
+        med_data = get_medhub_info(conf, year=c_time, conf_info = conf_info)
+        content = {}
+        for i, tmp_data in enumerate(med_data):
+            title, doi, url = tmp_data
+            content[str(i)] = {}
+            content[str(i)]['title'] = title
+            content[str(i)]['url'] = url
+            content[str(i)]['doi'] = doi
+            content[str(i)]['abstract'] = ''
+            content[str(i)]['cite_num'] = -1
+            content[str(i)]['conf'] = conf
+            content[str(i)]['time'] = c_time
+
+        with open(fname,'w',encoding='utf8') as f:
+            json.dump(content, f)
+
+        print('The papers in ' + conf + c_time + ' are loaded')
+        return list(content.values())
+
+    elif conf_info[conf]['database'] == 'dblp':
         if conf_info[conf]['type'] == 'conf':
             if conf in ['cvpr','iccv']:
                 url = 'http://openaccess.thecvf.com/' + conf.upper() + c_time + '.py'
@@ -400,14 +423,9 @@ def get_titles(conf ,conf_info, c_time):
                     title = item.text.lower()
                     url = 'http://openaccess.thecvf.com/' + item['href']
                     titles.append((title, url))
-
-
             else:
                 titles = one_page_titles(conf, conf_info, c_time, volume='')
-
                 if len(titles) == 0:
-                    # print('There may be several volumes')
-
                     start_v = 1
                     while True:
                         volume = '-' + str(start_v)
@@ -416,9 +434,10 @@ def get_titles(conf ,conf_info, c_time):
                             break
                         titles.extend(tmp_titles)
                         start_v += 1
+
         else:
             url = 'https://dblp.org/db/journals/' + conf + '/'
-            v_ind = 2020 - int(c_time)
+            v_ind = cur_year - int(c_time)
             soup = get_soup(url)
             v_info = soup.select('div#main > ul > li > a')[v_ind].text
             v_ind = re.split(r' |:', v_info)[1]
@@ -445,4 +464,3 @@ def get_titles(conf ,conf_info, c_time):
 
             print('The papers in ' + conf + c_time + ' are loaded')
             return list(content.values())
-

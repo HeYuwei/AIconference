@@ -8,18 +8,19 @@ if __name__ == '__main__':
     # parser.add_argument('--conf_list', type = object , default=['arxiv'],
     #                     help='The conferences or journal to reserach.')
 
-    parser.add_argument('--conf_list', type = object , default=['mm'],
+    parser.add_argument('--conf_list', type = object , default=['jama'],
                         help='The conferences or journal to reserach.')
     #
-    parser.add_argument('--time_sec', type = object, default=['2016','2020'],
+    parser.add_argument('--time_sec', type = object, default=['2018'],
                         help= 'The time range to research')
 
     parser.add_argument('--with_tip', type=bool, default=False,
                         help='Note the keywords.')
 
-    parser.add_argument('--key_words_m', type=list, default=[''],
+    parser.add_argument('--key_words_m', type=list, default=[],
                         help='The words must be contained ')
-    parser.add_argument('--key_words_c', type=list, default=[],
+
+    parser.add_argument('--key_words_c', type=list, default=['diagnosis'],
                         help='At least one word should be contained ')
     # parser.add_argument('--key_words_c', type=list, default=['stroke','infarction','apoplexy'],
     #                     help='At least one word should be contained ')

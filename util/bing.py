@@ -107,7 +107,7 @@ def supply_basic_info(item,conf,refresh_info):
         has_cite = True
 
     if not(has_abstract and has_cite):
-        if conf == 'arxiv':
+        if 'doi' in item.keys() and item['doi'] is not None:
             get_semantic_info(item)
         else:
             get_bing_info(item, has_abstract, has_cite)

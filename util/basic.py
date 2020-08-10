@@ -84,10 +84,9 @@ def addTips(content,keywords):
             content = content.replace(word,'$$'+word+'$$')
     return content
 
-def one_page_titles(conf,conf_info,c_time,volume = ''):
+def one_page_titles(conf, conf_info, c_time, volume = ''):
 
     url = 'https://dblp.org/db/' + conf_info[conf]['type'] + '/' + conf_info[conf]['parent'] + '/' + conf + c_time + volume + '.html'
-    # print(url)
     soup = get_soup(url)
 
     if conf_info[conf]['type'] == 'conf':
@@ -99,7 +98,7 @@ def one_page_titles(conf,conf_info,c_time,volume = ''):
     for item in items:
         title = item.find(class_ = 'title').text.lower()
         url = item.find(class_ = 'ee').find('a').get('href')
-        titles.append((title,url))
+        titles.append((title, url))
     return titles
 
 def mkdir(d_name):
